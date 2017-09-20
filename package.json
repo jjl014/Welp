@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/jjl014/Welp#readme",
   "engines": {
-    "node": "4.1.1",
-    "npm": "2.1.x"
+    "node": "6.10.1",
+    "npm": "3.10.10"
   }
 }
