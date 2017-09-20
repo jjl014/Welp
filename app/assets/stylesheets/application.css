@@ -18,10 +18,22 @@ html, body, div, span, h1, h2, h3, h4, a, p, ol, ul, li, form, label, article, a
   font-family: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial, sans-serif;
 }
 
-p.subheading {
+p.subheader {
   font-weight: bold;
 }
 
 button{
-  width: 100%
+  width: 100%;
+  font-weight: bold;
+}
+
+.btn-primary {
+  color: white;
+  border: solid 1px #8d0005;
+  background-color: #d90007;
+  background: linear-gradient(#d90007, #c91400);
+  border-radius: 3px;
+  font-size: 14px;
+  padding: 7px 0;
+  /*box-shadow: 0 1px 1px rgba(0,0,0,0.3);*/
 }

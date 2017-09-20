@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   height: 64px;
+  width: 100%;
 }
 
 .session-header a {
@@ -26,6 +27,7 @@
   border: 2px solid #d32323;
   margin: 0 auto;
   padding: 20px 0px;
+  width: 100%;
 }
 
 .session-form-container-left {
@@ -35,14 +37,15 @@
 
 .session-form-container-left h2{
   font-size: 22px;
+  color: #d32323;
+  font-weight: bold;
+  text-align: center;
 }
 
 .session-form-container-left p{
-  font-size: 13px;
-}
-
-.session-form-container-right{
-
+  font-size: 14px;
+  text-align: center;
+  margin-top: 8px;
 }
 
 .session-form {
@@ -50,6 +53,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 20px 0 10px 0;
 }
 
 .session-form input {
@@ -59,6 +63,8 @@
   border: solid 1px grey;
   width: 100%;
   box-sizing: border-box;
+  font-weight: normal;
+  font-size: 14px;
 }
 
 .session-form input:focus {
@@ -67,4 +73,28 @@
 
 .session-form button {
   margin-top: 10px;
+}
+
+.session-body {
+  min-height: 720px;
+  min-width: 1020px;
+  display: flex;
+}
+
+p.subheader {
+  color: #333;
+}
+
+p.subtle-text {
+  text-align: right;
+  color: #999;
+}
+
+p.subtle-text a, p.subheader a {
+  color: #0073bb;
+  text-decoration: none;
+}
+
+p.subtle-text a:hover, p.subheader a:hover{
+  text-decoration: underline;
 }
