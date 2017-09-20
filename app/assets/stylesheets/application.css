@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+html, body, div, span, h1, h2, h3, h4, a, p, ol, ul, li, form, label, article, aside, figure, figcaption, footer, header, nav {
+  font-family: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial, sans-serif;
+}
+
+p.subheading {
+  font-weight: bold;
+}
+
+button{
+  width: 100%
+}

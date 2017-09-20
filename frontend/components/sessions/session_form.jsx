@@ -63,12 +63,10 @@ export default class SessionForm extends React.Component {
     if(this.props.formType === 'signup') {
       button = 'Sign Up';
       display = (
-        <label>Email
-          <input onChange={this.handleChange('email')} type="email" value={this.state.email}></input>
-        </label>
+        <input onChange={this.handleChange('email')} type="email" value={this.state.email} placeholder="Email"></input>
       );
     } else {
-      button = 'Sign In';
+      button = 'Log In';
       display = null;
     }
     return (
@@ -77,18 +75,31 @@ export default class SessionForm extends React.Component {
           <Link to="/">Welp</Link>
         </header>
         <div className="session-form-container">
-          {this.renderErrors()}
-          <form className="session-form">
-            <label>Username
-              <input onChange={this.handleChange('username')} type="text" value={this.state.username}></input>
-            </label>
-            <label>Password
-              <input onChange={this.handleChange('password')} type="password" value={this.state.password}></input>
-            </label>
-            {display}
-            <button onClick={this.handleSubmit()}>{button}</button>
-            <Link onClick={this.handleDemoLogin()} to='/'>Demo Login</Link>
-          </form>
+          <div className="column-1-2">
+            <div className="session-form-container-left">
+              {this.renderErrors()}
+              <form className="session-form">
+                <h2>Log in to Yelp</h2>
+                <p className="">New to Yelp? <Link to='/signup'>Sign up</Link></p>
+                <input onChange={this.handleChange('username')}
+                  type="text"
+                  value={this.state.username}
+                  placeholder="Username"></input>
+                <input onChange={this.handleChange('password')}
+                  type="password"
+                  value={this.state.password}
+                  placeholder="Password"></input>
+                {display}
+                <button onClick={this.handleSubmit()}>{button}</button>
+                <button onClick={this.handleDemoLogin()}>Demo Login</button>
+              </form>
+            </div>
+          </div>
+          <div className="column-1-2">
+            <div className="session-form-container-right">
+              <img src="https://res.cloudinary.com/jun/image/upload/v1505933693/signup_illustration_qw2im7.png" alt="Welcome Image"></img>
+            </div>
+          </div>
         </div>
       </div>
     );

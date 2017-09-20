@@ -1,3 +1,7 @@
+.session-container {
+  width: 100%;
+}
+
 .session-header {
   background-color: #d32323;
   display: flex;
@@ -11,11 +15,34 @@
   font-size: 40px;
 }
 
+.column-1-2 {
+  width: 50%;
+  margin-top: 114px;
+}
+
 .session-form-container {
-  width: 60%;
+  display: flex;
+  justify-content: center;
   border: 2px solid #d32323;
   margin: 0 auto;
   padding: 20px 0px;
+}
+
+.session-form-container-left {
+  max-width: 300px;
+  margin: auto;
+}
+
+.session-form-container-left h2{
+  font-size: 22px;
+}
+
+.session-form-container-left p{
+  font-size: 13px;
+}
+
+.session-form-container-right{
+
 }
 
 .session-form {
@@ -27,7 +54,15 @@
 
 .session-form input {
   margin-top: 10px;
-  margin-left: 5px;
+  padding: 5px 9px;
+  border-radius: 3px;
+  border: solid 1px grey;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.session-form input:focus {
+  border-color: rgb(46,117,182);
 }
 
 .session-form button {
