@@ -21,7 +21,10 @@
               rgba(0,0,0,0.5)),
               url('http://res.cloudinary.com/jun/image/upload/co_rgb:0f0f0f,e_art:al_dente/v1505924985/kobe_beef_cb3lyz.jpg');
   background-size: cover;
-  height: 500px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: auto;
+  height: 570px;
 }
 
 
