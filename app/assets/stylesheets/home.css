@@ -9,35 +9,37 @@
   /*font-family: 'Roboto', sans-serif;*/
   font-family: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial, sans-serif;
   text-decoration: none;
-  display: block;
-  width: 75px;
+  display: inline-block;
+  width: auto;
   text-align: center;
   font-weight: bold;
   font-size: 14px;
+  color: white;
 }
 
 .homepage-splash {
   background: linear-gradient(rgba(0,0,0,0.5),
               rgba(0,0,0,0.5)),
-              url('http://res.cloudinary.com/jun/image/upload/co_rgb:0f0f0f,e_art:al_dente/v1505924985/kobe_beef_cb3lyz.jpg');
+              url('https://res.cloudinary.com/jun/image/upload/co_rgb:0f0f0f,e_art:al_dente/v1505924985/kobe_beef_cb3lyz.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   margin: auto;
   height: 570px;
+  display: flex;
+  flex-direction: column;
 }
-
 
 .main-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin: 0px 20px;
   padding-top: 20px;
 }
 
-.main-header a {
-  padding: 7px 11px;
-  color: white;
+.homepage-splash a {
+  padding: 7px 11px 10px 11px;
+
 }
 
 .main-header a:hover {
@@ -45,11 +47,17 @@
 }
 
 .main-header nav a:last-of-type {
+  width: 75px;
+}
+
+.main-header nav a:last-of-type,
+.main-header > a:first-of-type {
   border: 2px solid white;
   border-radius: 5px;
 }
 
-.main-header nav a:last-of-type:hover {
+.main-header nav a:last-of-type:hover,
+.main-header > a:first-of-type:hover {
   background-color: rgb(255,255,255);
   color: grey;
 }
@@ -60,4 +68,19 @@ nav {
 
 .main-header nav a {
   margin-left: 10px;
+}
+
+/* Main Inner Container */
+.main-inner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.link-logo {
+  color: white;
+  font-family: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial, sans-serif;
+  font-size: 50px;
 }

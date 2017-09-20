@@ -17,23 +17,25 @@ export default class Greeting extends React.Component {
     if (this.props.currentUser) {
       display = (
         <nav>
-          <h1>Welcome to the Greeting Container, {this.props.currentUser.username} </h1>
-          <button onClick={this.signoff()}>Log Out</button>
+          <h1 style={{color:'white'}}>Welcome to the Greeting Container, {this.props.currentUser.username} </h1>
+          <Link to='/' onClick={this.signoff()}>Log Out</Link>
         </nav>
       );
     } else {
       display = (
         <nav>
+          <Link to='/login'>Log In</Link>
           <Link to='/signup'>Sign Up</Link>
-          <Link to='/signin'>Sign In</Link>
         </nav>
       );
     }
     return (
       <div className="homepage-splash">
         <div className="main-header">
-          <Link to='/'>Welp</Link>
           {display}
+        </div>
+        <div className="main-inner-container">
+          <Link className="link-logo" to='/'>Welp</Link>
         </div>
       </div>
     );

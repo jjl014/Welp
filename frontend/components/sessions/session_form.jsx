@@ -16,6 +16,21 @@ export default class SessionForm extends React.Component {
     };
   }
 
+  componentWillMount() {
+    this.props.clearSessionErrors();
+  }
+
+  handleDemoLogin() {
+    return (e) => {
+      e.preventDefault();
+      const demoUser = {
+        username: 'demo',
+        password: '123456'
+      };
+      this.props.processForm(demoUser, 'signin');
+    };
+  }
+
   handleChange(field) {
     return (e) => {
       this.setState({[field]: e.target.value});
@@ -72,6 +87,7 @@ export default class SessionForm extends React.Component {
             </label>
             {display}
             <button onClick={this.handleSubmit()}>{button}</button>
+            <Link onClick={this.handleDemoLogin()} to='/'>Demo Login</Link>
           </form>
         </div>
       </div>

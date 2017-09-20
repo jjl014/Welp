@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
-import { signin, register } from '../../actions/session_actions';
+import { signin, register, clearSessionErrors } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
@@ -15,7 +15,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     } else {
       return dispatch(signin(user));
     }
-  }
+  },
+  clearSessionErrors: () => dispatch(clearSessionErrors())
 });
 
 export default connect(
