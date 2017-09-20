@@ -83,7 +83,7 @@ export default class SessionForm extends React.Component {
         <header className="session-header">
           <Link to="/">Welp</Link>
         </header>
-        <div className="session-body">
+        <div className="session-body-responsive">
           <div className="session-form-container">
             <div className="column-1-2">
               <div className="session-form-container-left">

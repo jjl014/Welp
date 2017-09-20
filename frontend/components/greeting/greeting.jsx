@@ -13,16 +13,16 @@ export default class Greeting extends React.Component {
   }
 
   render() {
-    let display;
+    let nav;
     if (this.props.currentUser) {
-      display = (
+      nav = (
         <nav>
           <h1 style={{color:'white'}}>Welcome to the Greeting Container, {this.props.currentUser.username} </h1>
           <Link to='/' onClick={this.signoff()}>Log Out</Link>
         </nav>
       );
     } else {
-      display = (
+      nav = (
         <nav>
           <Link to='/login'>Log In</Link>
           <Link to='/signup'>Sign Up</Link>
@@ -32,7 +32,7 @@ export default class Greeting extends React.Component {
     return (
       <div className="homepage-splash">
         <div className="main-header">
-          {display}
+          {nav}
         </div>
         <div className="main-inner-container">
           <Link className="link-logo" to='/'>Welp</Link>

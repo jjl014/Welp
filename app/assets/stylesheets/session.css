@@ -75,7 +75,7 @@
   margin-top: 10px;
 }
 
-.session-body {
+.session-body-responsive {
   min-height: 720px;
   min-width: 1020px;
   display: flex;
