@@ -43,7 +43,6 @@ export default class SessionForm extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     let display;
     let button;
     if(this.props.formType === 'signup') {
