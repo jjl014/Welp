@@ -1,0 +1,38 @@
+.main-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.homepage-splash {
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/assets/kobe_beef.jpg');
+  background-size: cover;
+  height: 500px;
+}
+
+.homepage-splash a:hover {
+  background-color: rgb(255,255,255);
+  color: grey;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 20px;
+  padding-top: 20px;
+}
+
+.main-header a {
+  padding: 6px 10px;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+nav {
+  display: flex;
+}
+
+.main-header nav a {
+  margin-left: 10px;
+}

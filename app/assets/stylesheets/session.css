@@ -1,0 +1,35 @@
+.session-header {
+  background-color: #d32323;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.session-header a {
+  color: white;
+  font-size: 40px;
+}
+
+.session-form-container {
+  width: 60%;
+  border: 2px solid #d32323;
+  margin: 0 auto;
+  padding: 20px 0px;
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-form input {
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.session-form button {
+  margin-top: 10px;
+}
