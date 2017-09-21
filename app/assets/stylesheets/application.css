@@ -37,3 +37,8 @@ button{
   padding: 7px 0;
   /*box-shadow: 0 1px 1px rgba(0,0,0,0.3);*/
 }
+
+.btn-primary:hover {
+  background-color: #ed0008;
+  background: linear-gradient(#ed0008, #dd1600);
+}

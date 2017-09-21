@@ -5,8 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(username: "demo", password:"123456", email: "demo@demo.com", zipcode: 94134)
+demo = User.create(username: "demo_user", password:"123456", email: "demo@demo.com", zipcode: 94134)
 
-User.create(username: "hello", password:"123456", email:"soesaeiojrirj")
-User.create(username: "hell2", password:"123456", email:"soesaei2111ojrirj")
-User.create(username: "hell3", password:"123456", email:"soesaei21ojrirj")
+Business.create(name: "yelp", address: "where", city: "wut", state: "when", zipcode: 94203, owner_id: demo)
+Business.create(name: "kfc", address: "where", city: "wut", state: "when", zipcode: 94203, owner_id: demo)
+Business.create(name: "mcdonalds", address: "where", city: "wut", state: "when", zipcode: 94203, owner_id: demo)
+Business.create(name: "wendys", address: "where", city: "wut", state: "when", zipcode: 94203, owner_id: demo)
+Business.create(name: "jack in the crack", address: "where", city: "wut", state: "when", zipcode: 94203, owner_id: demo)
+Business.create(name: "chipotle", address: "where", city: "wut", state: "when", zipcode: 94203, owner_id: demo)

@@ -84,3 +84,7 @@ nav {
   font-family: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial, sans-serif;
   font-size: 50px;
 }
+
+.main-body-responsive {
+  min-width: 1020px;
+}

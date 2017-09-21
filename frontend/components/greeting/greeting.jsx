@@ -31,11 +31,13 @@ export default class Greeting extends React.Component {
     }
     return (
       <div className="homepage-splash">
-        <div className="main-header">
-          {nav}
-        </div>
-        <div className="main-inner-container">
-          <Link className="link-logo" to='/'>Welp</Link>
+        <div className="main-body-responsive">
+          <div className="main-header">
+            {nav}
+          </div>
+          <div className="main-inner-container">
+            <Link className="link-logo" to='/'>Welp</Link>
+          </div>
         </div>
       </div>
     );

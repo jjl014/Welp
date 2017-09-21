@@ -1,0 +1,29 @@
+.errors {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1020;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #fcd6d3;
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding: 18px 18px 18px 24px;
+  margin-top
+}
+div.close-btn {
+  font-size: 24px;
+  color: #666;
+  float: right;
+  opacity: 0.5;
+  margin-top: -5px;
+}
+
+div.close-btn:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.errors-ul li:not(:last-child){
+  margin-bottom: 10px;
+}

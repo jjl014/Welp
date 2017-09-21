@@ -1,5 +1,13 @@
 .session-container {
   width: 100%;
+  min-width: 1020px;
+  display: flex;
+  flex-direction: column;
+}
+
+.session-body-responsive {
+  display: flex;
+  flex-direction: column;
 }
 
 .session-header {
@@ -16,6 +24,14 @@
   font-size: 40px;
 }
 
+.session-form-wrapper {
+  width: 100%;
+  max-width: 1020px;
+  min-height: 720px;
+  margin: 10px 20px 0px 20px;
+  align-self: center;
+}
+
 .column-1-2 {
   width: 50%;
   margin-top: 114px;
@@ -23,9 +39,8 @@
 
 .session-form-container {
   display: flex;
-  justify-content: center;
-  border: 2px solid #d32323;
   margin: 0 auto;
+  justify-content: center;
   padding: 20px 0px;
   width: 100%;
 }
@@ -75,11 +90,10 @@
   margin-top: 10px;
 }
 
-.session-body-responsive {
-  min-height: 720px;
-  min-width: 1020px;
-  display: flex;
+button:hover {
+  cursor: pointer;
 }
+
 
 p.subheader {
   color: #333;
