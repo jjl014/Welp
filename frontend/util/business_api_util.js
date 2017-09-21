@@ -28,7 +28,7 @@ export const patchBusiness = (business) => (
   })
 );
 
-export const deleteBusiness = (id) => (
+export const destroyBusiness = (id) => (
   $.ajax({
     method: "DELETE",
     url: `/api/businesses/${id}`

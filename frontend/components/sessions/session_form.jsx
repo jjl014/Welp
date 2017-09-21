@@ -23,7 +23,6 @@ export default class SessionForm extends React.Component {
   handleDemoLogin() {
     return (e) => {
       e.preventDefault();
-      console.log(this.props);
       if (this.props.match.url !== '/login') {
         this.props.history.push("/login");
         setTimeout(this.handleDemo.bind(this), 1000);
@@ -38,9 +37,7 @@ export default class SessionForm extends React.Component {
     const password = Array.from("123456");
     let that = this;
     const logInDemo = (wut) => {
-      console.log("wtf");
       const demoInterval = setInterval(() => {
-        console.log("entered");
         if (username.length > 0) {
           const user = wut.state.username + username.shift();
           this.setState({username: user});
@@ -73,7 +70,6 @@ export default class SessionForm extends React.Component {
 
   handleCloseErrors() {
     return (e) => {
-      console.log("hello errors");
       e.preventDefault();
       this.props.clearSessionErrors();
     };

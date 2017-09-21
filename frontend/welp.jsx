@@ -2,18 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { configureStore } from './store/store';
 import Root from './components/root';
-import { login, logout, signup } from './util/session_api_util';
-import { register, signin, signout } from './actions/session_actions';
+import {getAllBusinesses, getBusiness, postBusiness, patchBusiness, destroyBusiness} from './util/business_api_util';
+import {fetchBusinesses, createBusiness, updateBusiness, deleteBusiness} from './actions/business_actions';
 
-window.login = login;
-window.logout = logout;
-window.signup = signup;
+window.getAllBusinesses = getAllBusinesses;
+window.getBusiness = getBusiness;
+window.postBusiness = postBusiness;
+window.patchBusiness = patchBusiness;
+window.destroyBusiness = destroyBusiness;
 
-window.register = register;
-window.signin = signin;
-window.signout = signout;
-
-
+window.fetchBusinesses = fetchBusinesses;
+window.createBusiness = createBusiness;
+window.updateBusiness = updateBusiness;
+window.deleteBusiness = deleteBusiness;
 
 document.addEventListener('DOMContentLoaded', () => {
   const rootEl = document.getElementById('root');

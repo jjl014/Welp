@@ -1,7 +1,7 @@
 class Api::BusinessesController < ApplicationController
   def create
     @business = Business.new(business_params)
-    @business.owner_id = current_user.id
+    @business.owner_id = current_user.id if current_user
     if @business.save
       render :show
     else
@@ -30,7 +30,7 @@ class Api::BusinessesController < ApplicationController
 
   def destroy
     business = Business.find(params[:id])
-    if current_user.businesses.include?(business)
+    if current_user && current_user.businesses.include?(business)
       business.destroy
       render json: business
     else
