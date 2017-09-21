@@ -19,6 +19,25 @@ class Api::BusinessesController < ApplicationController
     render :show
   end
 
+  def update
+    @business = Business.find(params[:id])
+    if @business.update_attributes(business_params)
+      render :show
+    else
+      render json: @business.errors.full_messages, status: 422
+    end
+  end
+
+  def destroy
+    business = Business.find(params[:id])
+    if current_user.businesses.include?(business)
+      business.destroy
+      render json: business
+    else
+      render json: ["Must be the owner to perform this operation: Delete"], status: 401
+    end
+  end
+
   private
 
   def business_params

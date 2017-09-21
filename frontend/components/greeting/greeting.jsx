@@ -18,7 +18,7 @@ export default class Greeting extends React.Component {
       nav = (
         <nav>
           <h1 style={{color:'white'}}>Welcome to the Greeting Container, {this.props.currentUser.username} </h1>
-          <Link to='/' onClick={this.signoff()}>Log Out</Link>
+          <a onClick={this.signoff()}>Log Out</a>
         </nav>
       );
     } else {

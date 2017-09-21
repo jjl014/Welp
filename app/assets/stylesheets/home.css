@@ -1,3 +1,7 @@
+.super-container {
+  width: 100%;
+}
+
 .main-header {
   display: flex;
   flex-direction: row;
@@ -25,9 +29,10 @@
   background-repeat: no-repeat;
   background-position: center center;
   margin: auto;
-  height: 570px;
+  height: 600px;
   display: flex;
   flex-direction: column;
+  min-width: 1020px;
 }
 
 .main-header {
@@ -38,7 +43,7 @@
 }
 
 .homepage-splash a {
-  padding: 7px 11px 10px 11px;
+  padding: 8px 11px 10px 11px;
 
 }
 

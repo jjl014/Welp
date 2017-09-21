@@ -6,7 +6,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
   return (
-    <div>
+    <div className="super-container">
       <Route exact path="/" component={GreetingContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer}/>
       <AuthRoute path="/login" component={SessionFormContainer}/>
