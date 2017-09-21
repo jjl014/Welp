@@ -23,6 +23,12 @@ div.close-btn:hover {
   opacity: 0.7;
 }
 
+.errors-ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .errors-ul li:not(:last-child){
   margin-bottom: 10px;
 }
