@@ -1,0 +1,77 @@
+.biz-index-container {
+  border: 5px solid blue;
+  width: 100%
+}
+
+.biz-index {
+}
+
+.biz-index-item-container {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 17px 0;
+  box-sizing: border-box;
+}
+.biz-index-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.biz-main-listing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.biz-detail {
+  display: flex;
+  flex-direction: row;
+}
+
+.biz-media {
+  height: 90px;
+  width: 90px;
+  margin-right: 12px;
+}
+
+.biz-name {
+  margin-bottom: 6px;
+}
+
+.biz-rating {
+  margin: 6px 0;
+}
+
+.biz-review-preview {
+
+}
+
+
+/* Business Search Container */
+.biz-search-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.biz-header {
+  background-color: #d32323;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  width: 100%;
+  min-width: 1020px;
+}
+
+.biz-header a {
+  color: white;
+  font-size: 40px;
+}
+
+.biz-search-wrap {
+  display: flex;
+  flex-direction: row;
+  max-width: 1020px;
+  margin: 0 auto;
+}

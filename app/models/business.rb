@@ -6,4 +6,3 @@ class Business < ApplicationRecord
     foreign_key: :owner_id,
     class_name: :User
 end
-  
