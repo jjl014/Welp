@@ -53,10 +53,82 @@ a {
   font-size: 100%;
 }
 
+h1 {
+  font-size: 36px;
+}
+
+.column-1-2 {
+  width: 50%;
+}
+
 .column-1-3 {
   width: 33.3333%;
 }
 
 .column-2-3 {
   width: 66.6667%;
+}
+
+.column-alpha {
+  padding: 0 15px;
+  width: 66.6667%;
+  box-sizing: border-box;
+}
+
+.column-beta {
+  padding: 0 15px;
+  width: 33.3333%;
+  box-sizing: border-box;
+}
+
+.col-full {
+  width: 100%;
+}
+
+h2 {
+  font-size: 22px;
+  color: #d32323;
+  font-weight: bold;
+}
+
+input {
+  padding: 5px 9px;
+  border-radius: 3px;
+  border: solid 1px #999;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+body {
+  font-size: 14px;
+}
+
+/* Hide HTML5 Up and Down arrows. */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.v-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.h-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.max-w-1020 {
+  max-width: 1020px;
+}
+
+.center {
+  margin: 0 auto;
 }

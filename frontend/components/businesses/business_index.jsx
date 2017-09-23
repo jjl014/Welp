@@ -19,9 +19,8 @@ export default class BusinessIndex extends React.Component {
     });
 
     return (
-      <div className="biz-index-container">
+      <div className="biz-index-container column-alpha">
         <div className="biz-index">
-          <h1>Business Index Container</h1>
           <ul className="biz-index-ul">
             {businessList}
           </ul>

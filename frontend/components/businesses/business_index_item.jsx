@@ -10,7 +10,7 @@ const BusinessIndexItem = ({business}) => {
             <img className="biz-media"
               src="https://res.cloudinary.com/jun/image/upload/v1506033108/business_90_square_i61t6u.png"/>
             <div className="biz-media-story">
-              <div className="biz-name"><Link to="/businesses">{business.name}</Link></div>
+              <div className="biz-name"><Link to={`/businesses/${business.id}`}>{business.name}</Link></div>
               <div className="biz-rating">5</div>
               <div className="biz-price-category">$$</div>
             </div>

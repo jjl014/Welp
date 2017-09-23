@@ -1,5 +1,4 @@
 .biz-index-container {
-  border: 5px solid blue;
   width: 100%
 }
 
@@ -52,6 +51,8 @@
 .biz-search-container {
   display: flex;
   flex-direction: column;
+  min-width: 1020px;
+  padding-bottom: 36px;
 }
 
 .biz-header {
@@ -70,8 +71,14 @@
 }
 
 .biz-search-wrap {
+  padding: 15px;
+  padding-top: 15px;
   display: flex;
   flex-direction: row;
   max-width: 1020px;
   margin: 0 auto;
+}
+
+.biz-btn {
+  width: 150px;
 }

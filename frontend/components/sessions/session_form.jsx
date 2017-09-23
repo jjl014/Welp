@@ -126,7 +126,7 @@ export default class SessionForm extends React.Component {
           <div className="session-form-wrapper">
             {this.renderErrors()}
             <div className="session-form-container">
-              <div className="column-1-2">
+              <div className="column-1-2 session-left">
                 <div className="session-form-container-left">
                   <h2>{message}</h2>
                   {sub1}
@@ -146,7 +146,7 @@ export default class SessionForm extends React.Component {
                   {sub2}
                 </div>
               </div>
-              <div className="column-1-2">
+              <div className="column-1-2 session-right">
                 <div className="session-form-container-right">
                   <img src="https://res.cloudinary.com/jun/image/upload/v1505933693/signup_illustration_qw2im7.png" alt="Welcome Image"></img>
                 </div>

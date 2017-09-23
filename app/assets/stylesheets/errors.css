@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 1020;
-  margin: 0 auto;
+  max-width: 1020px;
   width: 100%;
   background-color: #fcd6d3;
   border-radius: 3px;

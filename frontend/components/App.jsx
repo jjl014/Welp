@@ -6,6 +6,7 @@ import SessionFormContainer from './sessions/session_form_container';
 import BusinessIndexContainer from './businesses/business_index_container';
 import BusinessSearch from './businesses/business_search';
 
+
 const App = () => {
   return (
     <div className="super-container">

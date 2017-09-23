@@ -37,6 +37,7 @@ export default class Greeting extends React.Component {
           </div>
           <div className="main-inner-container">
             <Link className="link-logo" to='/'>Welp</Link>
+            <Link to="/businesses"><h2>Restuarants</h2></Link>
           </div>
         </div>
       </div>

@@ -1,6 +1,11 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import BusinessIndexContainer from './business_index_container';
+import FilterContainer from '../filter/filter_container';
+import MapContainer from '../map/map_container';
+import BusinessFormContainer from '../business_form/business_form_container';
+import BusinessShowContainer from '../business_show/business_show_container';
+import Header from '../headers/header';
 
 export default class BusinessSearch extends React.Component {
   constructor(props) {
@@ -10,17 +15,19 @@ export default class BusinessSearch extends React.Component {
   render() {
     return (
       <div className="biz-search-container">
-        <div className="column-1-3">
-          <header className="biz-header">
-            <Link to="/">Welp</Link>
-          </header>
-        </div>
-        <div className="column-2-3">
+        <Header />
+        <Route exact path="/businesses" component={FilterContainer} />
+        <Route exact path="/businesses" render={() => (
           <div className="biz-search-wrap">
-            <BusinessIndexContainer />
-            <h1 style={{"fontSize": 70}}>MAP</h1>
+            <Route exact path="/businesses" component={BusinessIndexContainer} />
+            <Route exact path="/businesses" component={MapContainer} />
           </div>
-        </div>
+        )}/>
+        <Switch>
+          <Route path="/businesses/:businessId/edit" component={BusinessFormContainer}/>
+          <Route exact path="/businesses/new" component={BusinessFormContainer} />
+          <Route path="/businesses/:businessId" component={BusinessShowContainer}/>
+        </Switch>
       </div>
     );
   }

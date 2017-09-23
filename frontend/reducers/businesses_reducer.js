@@ -12,8 +12,7 @@ const BusinessesReducer = (state = {}, action) => {
       return action.businesses;
     case UPDATE_BUSINESS:
     case RECEIVE_BUSINESS:
-      newState[action.business.id] = action.business;
-      return newState;
+      return merge(newState, {[action.business.id]: action.business});
     case REMOVE_BUSINESS:
       delete newState[action.businessId];
       return newState;

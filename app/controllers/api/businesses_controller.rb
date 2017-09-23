@@ -5,7 +5,7 @@ class Api::BusinessesController < ApplicationController
     if @business.save
       render :show
     else
-      render json: @business.errors.full_messsages
+      render json: @business.errors.full_messages, status: 422
     end
   end
 

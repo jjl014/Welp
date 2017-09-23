@@ -1,0 +1,48 @@
+.biz-show-container {
+  width: 100%;
+  background-color: gray;
+  height: 400px;
+}
+
+.biz-page-main {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px black;
+}
+
+.biz-page-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid 1px red;
+}
+
+.biz-info {
+}
+
+.biz-edit-link {
+  float: right;
+  margin: 1px 3px;
+  border: solid 3px blue;
+  position: absolute;
+}
+
+.biz-header-left {
+  border: solid 3px green;
+  height: 100px;
+}
+
+.biz-header-right {
+  border: solid 3px orange;
+  height: 100px;
+}
+
+.biz-info-media {
+  border: solid 3px yellow;
+  height: 100px;
+}
+
+.biz-album {
+  border: solid 3px purple;
+  height: 100px;
+}
