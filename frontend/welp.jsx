@@ -2,19 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { configureStore } from './store/store';
 import Root from './components/root';
-import {getAllBusinesses, getBusiness, postBusiness, patchBusiness, destroyBusiness} from './util/business_api_util';
-import {fetchBusinesses, createBusiness, updateBusiness, deleteBusiness} from './actions/business_actions';
+import {getGeoFromAddress} from './util/map_api_util';
 
-window.getAllBusinesses = getAllBusinesses;
-window.getBusiness = getBusiness;
-window.postBusiness = postBusiness;
-window.patchBusiness = patchBusiness;
-window.destroyBusiness = destroyBusiness;
-
-window.fetchBusinesses = fetchBusinesses;
-window.createBusiness = createBusiness;
-window.updateBusiness = updateBusiness;
-window.deleteBusiness = deleteBusiness;
+window.getGeoFromAddress = getGeoFromAddress;
 
 document.addEventListener('DOMContentLoaded', () => {
   const rootEl = document.getElementById('root');

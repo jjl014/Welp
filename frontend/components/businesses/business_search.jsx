@@ -20,7 +20,9 @@ export default class BusinessSearch extends React.Component {
         <Route exact path="/businesses" render={() => (
           <div className="biz-search-wrap">
             <Route exact path="/businesses" component={BusinessIndexContainer} />
-            <Route exact path="/businesses" component={MapContainer} />
+            <div className="column-beta">
+              <Route exact path="/businesses" component={MapContainer} />
+            </div>
           </div>
         )}/>
         <Switch>

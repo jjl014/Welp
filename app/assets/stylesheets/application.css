@@ -99,6 +99,23 @@ input {
   box-sizing: border-box;
   font-weight: normal;
   font-size: 14px;
+  height: 30px;
+}
+
+select {
+  height: 30px;
+  box-sizing: border-box;
+  padding: 5px 9px;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 3px;
+  background-color: #FFF;
+  border: solid 1px #999;
+  color: #777777;
+}
+
+option {
+  padding: 5px 9px;
 }
 
 body {
@@ -107,12 +124,12 @@ body {
 
 /* Hide HTML5 Up and Down arrows. */
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input[type="number"] {
-    -moz-appearance: textfield;
+  -moz-appearance: textfield;
 }
 
 .v-box {

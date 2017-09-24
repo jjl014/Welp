@@ -3,6 +3,18 @@ import Map from '../map/map';
 import merge from 'lodash/merge';
 import {Link} from 'react-router-dom';
 
+const stateList = [
+  "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado",
+  "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho",
+  "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine",
+  "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi",
+  "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey",
+  "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
+  "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina",
+  "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia",
+  "Washington", "West Viriginia", "Wisconsin", "Wyoming"
+];
+
 export default class BusinessForm extends React.Component {
   constructor(props) {
     super(props);
@@ -10,7 +22,7 @@ export default class BusinessForm extends React.Component {
       name: "",
       address: "",
       city: "",
-      state: "",
+      state: "Alabama",
       zipcode: "",
       phone: "",
       url: "",
@@ -54,8 +66,8 @@ export default class BusinessForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const business = Object.assign({}, this.state);
-    this.props.processForm(business, this.props.formType);
-    this.props.history.push('/businesses');
+    this.props.processForm(business, this.props.formType)
+              .then((newBiz) => { });
   }
 
   handleCloseErrors() {
@@ -86,10 +98,16 @@ export default class BusinessForm extends React.Component {
     }
   }
 
+  renderOptions() {
+    return stateList.map(state => {
+      return <option key={state} value={state}>{state}</option>;
+    });
+  }
+
   render() {
     let button;
     let header;
-    if (this.formType === 'new') {
+    if (this.props.formType === 'new') {
       button = "Create Business";
       header = "Register Your Business";
     } else {
@@ -112,9 +130,11 @@ export default class BusinessForm extends React.Component {
               <label htmlFor="biz-city">City</label>
               <input onChange={this.update("city")} id="biz-city" placeholder="San Francisco" type="text" value={this.state.city}></input>
               <label htmlFor="biz-state">State</label>
-              <input onChange={this.update("state")} id="biz-state" placeholder="California" type="text" value={this.state.state}></input>
+              <select onChange={this.update("state")} id="biz-state" value={this.state.value}>
+                {this.renderOptions()}
+              </select>
               <label htmlFor="biz-zip">ZIP</label>
-              <input onChange={this.update("zipcode")} id="biz-zip" placeholder="94109" type="number" min="1" value={this.state.zipcode}></input>
+              <input onChange={this.update("zipcode")} id="biz-zip" placeholder="94109" type="number" min="1" max="99999" pattern="[0-9]{5}" value={this.state.zipcode}></input>
               <label htmlFor="biz-phone">Phone</label>
               <input onChange={this.update("phone")} id="biz-phone" placeholder="(123) 456-7890" type="text" value={this.state.phone || ""}></input>
               <label htmlFor="biz-url">Web Address</label>
