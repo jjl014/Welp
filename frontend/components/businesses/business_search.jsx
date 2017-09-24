@@ -21,12 +21,15 @@ export default class BusinessSearch extends React.Component {
           <div className="biz-search-wrap">
             <Route exact path="/businesses" component={BusinessIndexContainer} />
             <div className="column-beta">
-              <Route exact path="/businesses" component={MapContainer} />
+              <div className="map-wrapper">
+                <Route exact path="/businesses" component={MapContainer} />
+              </div>
+              <Link to="/businesses/new">New Business</Link>
             </div>
           </div>
         )}/>
         <Switch>
-          <Route path="/businesses/:businessId/edit" component={BusinessFormContainer}/>
+          <Route exact path="/businesses/:businessId/edit" component={BusinessFormContainer}/>
           <Route exact path="/businesses/new" component={BusinessFormContainer} />
           <Route path="/businesses/:businessId" component={BusinessShowContainer}/>
         </Switch>

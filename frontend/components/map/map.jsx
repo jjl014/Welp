@@ -1,4 +1,6 @@
+/* global google:false */
 import React from 'react';
+import isEmpty from 'lodash/isEmpty';
 
 const mapOptions = {
   // San Francisco
@@ -21,12 +23,21 @@ export default class Map extends React.Component {
     this.map = new google.maps.Map(map, mapOptions);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (!newProps.place || (Object.keys(newProps.place).length === 0)) return;
+    const lat = newProps.place.geometry.location.lat;
+    const lng = newProps.place.geometry.location.lng;
+    const position = new google.maps.LatLng(lat, lng);
+    const marker = new google.maps.Marker({
+      position,
+      map: this.map,
+   });
+  }
+
   render() {
     return (
-      <div className="map-wrapper">
-        <div id='map-container' ref='map'>
-          Map
-        </div>
+      <div id='map-container' ref='map'>
+        Map
       </div>
     );
   }

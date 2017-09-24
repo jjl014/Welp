@@ -8,4 +8,5 @@ json.extract! business, :id,
                         :url,
                         :lat,
                         :lng,
-                        :owner_id
+                        :owner_id,
+                        :price

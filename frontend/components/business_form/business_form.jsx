@@ -1,7 +1,9 @@
 import React from 'react';
 import Map from '../map/map';
 import merge from 'lodash/merge';
+import isEmpty from 'lodash/isEmpty';
 import {Link} from 'react-router-dom';
+import {addInputCallBack} from '../../util/general_util';
 
 const stateList = [
   "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado",
@@ -18,28 +20,35 @@ const stateList = [
 export default class BusinessForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      name: "",
-      address: "",
-      city: "",
-      state: "Alabama",
-      zipcode: "",
-      phone: "",
-      url: "",
-      lat: "",
-      lng: "",
-      price: ""
+      business: {
+        name: "",
+        address: "",
+        city: "",
+        state: "",
+        zipcode: "",
+        phone: "",
+        url: "",
+        lat: "",
+        lng: "",
+        price: ""
+      },
+      place: {}
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateState = this.updateState.bind(this);
   }
 
   componentWillMount() {
-    if (this.props.formType != 'new' && !this.props.business) {
+    if (this.props.formType !== 'new' && !this.props.business) {
       this.props.fetchBusiness(this.props.match.params.businessId)
                 .then(() => this.setState(this.props.business));
     }
     this.props.clearBusinessErrors();
   }
+
 
   componentDidMount() {
     if (this.props.business) {
@@ -48,18 +57,66 @@ export default class BusinessForm extends React.Component {
     document
       .querySelector('input#biz-zip')
       .addEventListener("mousewheel", function(event){ this.blur(); });
+    addInputCallBack(document.getElementById('biz-address'),
+                     this.updateState,
+                     1000);
+    addInputCallBack(document.getElementById('biz-city'),
+                     this.updateState,
+                     1000);
+    addInputCallBack(document.getElementById('biz-zip'),
+                     this.updateState,
+                     1000);
+
+  }
+
+  componentWillUnmount() {
+
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.match.params.businessId !== this.props.match.params.businessId) {
+    if (newProps.match.params.businessId !== this.props.match.params.businessId &&
+        newProps.match.url !== '/businesses/new') {
       this.props.fetchBusiness(newProps.match.params.businessId)
-                .then(() => this.setState(newProps.business));
+                .then((newBiz) => {
+                  this.setState(newBiz.business);
+                });
+    } else if (!newProps.errors.length > 0) {
+      this.resetState();
     }
+  }
+
+  resetState() {
+    this.setState({
+      business: {
+        name: "",
+        address: "",
+        city: "",
+        state: "",
+        zipcode: "",
+        phone: "",
+        url: "",
+        lat: "",
+        lng: "",
+        price: ""
+      },
+      place: {}
+    });
+  }
+
+  updateState() {
+    this.props.getGeoFromAddress(this.state.business)
+      .then((data) => {
+        if (data.status === "OK") {
+          const place = data.results[0];
+          const {lat, lng} = data.results[0].geometry.location;
+          this.setState({business: { lat, lng }, place});
+        }
+      });
   }
 
   update(field) {
     return (e) => {
-      this.setState({[field]: e.target.value});
+      this.setState({business: {[field]: e.target.value}});
     };
   }
 
@@ -67,7 +124,10 @@ export default class BusinessForm extends React.Component {
     e.preventDefault();
     const business = Object.assign({}, this.state);
     this.props.processForm(business, this.props.formType)
-              .then((newBiz) => { });
+              .then((newBiz) => {
+                const props = this.props;
+                props.history.push(`/businesses/${newBiz.business.id}`);
+              });
   }
 
   handleCloseErrors() {
@@ -124,27 +184,28 @@ export default class BusinessForm extends React.Component {
           <div className="biz-form-container">
             <div className="biz-form">
               <label htmlFor="biz-name">Business Name</label>
-              <input onChange={this.update("name")} id="biz-name" placeholder="Welp's Diner" type="text" value={this.state.name}></input>
+              <input onChange={this.update("name")} id="biz-name" placeholder="Welp's Diner" type="text" value={this.state.business.name}></input>
               <label htmlFor="biz-address">Address</label>
-              <input onChange={this.update("address")} id="biz-address" placeholder="123 Welp Street" type="text" value={this.state.address}></input>
+              <input onChange={this.update("address")} id="biz-address" placeholder="123 Welp Street" type="text" value={this.state.business.address}></input>
               <label htmlFor="biz-city">City</label>
-              <input onChange={this.update("city")} id="biz-city" placeholder="San Francisco" type="text" value={this.state.city}></input>
+              <input onChange={this.update("city")} id="biz-city" placeholder="San Francisco" type="text" value={this.state.business.city}></input>
               <label htmlFor="biz-state">State</label>
-              <select onChange={this.update("state")} id="biz-state" value={this.state.value}>
+              <select onChange={this.update("state")} id="biz-state" value={this.state.business.value}>
+                <option value="">Please Select</option>
                 {this.renderOptions()}
               </select>
               <label htmlFor="biz-zip">ZIP</label>
-              <input onChange={this.update("zipcode")} id="biz-zip" placeholder="94109" type="number" min="1" max="99999" pattern="[0-9]{5}" value={this.state.zipcode}></input>
+              <input onChange={this.update("zipcode")} id="biz-zip" placeholder="94109" type="number" min="1" max="99999" pattern="[0-9]{5}" value={this.state.business.zipcode}></input>
               <label htmlFor="biz-phone">Phone</label>
-              <input onChange={this.update("phone")} id="biz-phone" placeholder="(123) 456-7890" type="text" value={this.state.phone || ""}></input>
+              <input onChange={this.update("phone")} id="biz-phone" placeholder="(123) 456-7890" type="text" value={this.state.business.phone || ""}></input>
               <label htmlFor="biz-url">Web Address</label>
-              <input onChange={this.update("url")} id="biz-url" placeholder="www.welp.com" type="text" value={this.state.url || ""}></input>
+              <input onChange={this.update("url")} id="biz-url" placeholder="www.welp.com" type="text" value={this.state.business.url || ""}></input>
               <label htmlFor="biz-price">Price</label>
-              <input onChange={this.update("price")} id="biz-price" placeholder="$" type="text" value={this.state.price || ""}></input>
+              <input onChange={this.update("price")} id="biz-price" placeholder="$" type="text" value={this.state.business.price || ""}></input>
               <button className="btn-primary biz-btn" onClick={this.handleSubmit}>{button}</button>
             </div>
             <div className="biz-update-map">
-              <Map />
+              <Map place={this.state.place || {}}/>
             </div>
           </div>
         </div>
@@ -152,3 +213,11 @@ export default class BusinessForm extends React.Component {
     );
   }
 }
+
+// .then((data) => {
+//   if (data.status === "OK") {
+//     this.place = data.results[0];
+//     const {lat, lng} = data.results[0].geometry.location;
+//     this.setState({ lat, lng });
+//   }
+// });

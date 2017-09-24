@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import BusinessForm from './business_form';
-import {createBusiness, patchBusiness, fetchBusiness, clearBusinessErrors} from '../../actions/business_actions';
+import {createBusiness, updateBusiness, fetchBusiness, clearBusinessErrors} from '../../actions/business_actions';
 import {selectBusinessById} from '../../reducers/selectors';
+import {getGeoFromAddress} from '../../util/map_api_util';
+import {addInputCallBack} from '../../util/general_util';
 
 const mapStateToProps = (state, ownProps) => {
   let formType;
@@ -26,14 +28,15 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     if (formType === 'new') {
       return dispatch(createBusiness(business));
     } else {
-      return dispatch(patchBusiness(business));
+      return dispatch(updateBusiness(business));
     }
   },
   clearBusinessErrors: () => dispatch(clearBusinessErrors),
-  fetchBusiness: (id) => dispatch(fetchBusiness(id))
+  fetchBusiness: (id) => dispatch(fetchBusiness(id)),
+  getGeoFromAddress: (address) => getGeoFromAddress(address)
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(BusinessForm);
+)(BusinessForm));

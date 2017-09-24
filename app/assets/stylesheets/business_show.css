@@ -17,14 +17,19 @@
   border: solid 1px red;
 }
 
+.biz-info-media {
+  justify-content: space-between;
+}
+
 .biz-info {
+  width: 33%;
+  border: solid 3px magenta;
 }
 
 .biz-edit-link {
   float: right;
   margin: 1px 3px;
   border: solid 3px blue;
-  position: absolute;
 }
 
 .biz-header-left {
@@ -45,4 +50,22 @@
 .biz-album {
   border: solid 3px purple;
   height: 100px;
+}
+
+.biz-map-cropped {
+  float: left;
+  display: inline-block;
+}
+
+.biz-map-cropped h1 {
+  display: inline-block;
+}
+
+.biz-full-address {
+  float: left;
+  display: flex;
+}
+
+.biz-full-address p {
+  display: inline-block;
 }
