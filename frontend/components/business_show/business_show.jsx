@@ -18,6 +18,45 @@ export default class BusinessShow extends React.Component {
     }
   }
 
+  updateLatLng() {
+    const {business} = this.props;
+    if (!business.lat || !business.lng) {
+
+    }
+  }
+
+  renderPhoneDetail() {
+    const phone = this.props.business.phone;
+    if (phone) {
+      return (
+        <div className="biz-phone h-box">
+          <div className="biz-icon">
+            <i className="fa fa-phone" aria-hidden="true"></i>
+          </div>
+          {phone}
+        </div>
+      );
+    } else {
+      return null;
+    }
+  }
+
+  renderUrlDetail() {
+    const url = this.props.business.url;
+    if (url) {
+      return (
+        <div className="biz-url h-box">
+          <div className="biz-icon">
+            <i className="fa fa-external-link" aria-hidden="true"></i>
+          </div>
+          <a href={`http://${url}`}>{url}</a>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  }
+
   render() {
     const business = this.props.business;
     if (business) {
@@ -51,18 +90,8 @@ export default class BusinessShow extends React.Component {
                     {business.address}<br/>
                     {business.city},&nbsp;{business.state}&nbsp;{business.zipcode}<br/>
                   </div>
-                  <div className="biz-phone h-box">
-                    <div className="biz-icon">
-                      <i className="fa fa-phone" aria-hidden="true"></i>
-                    </div>
-                    {business.phone}
-                  </div>
-                  <div className="biz-url h-box">
-                    <div className="biz-icon">
-                      <i className="fa fa-external-link" aria-hidden="true"></i>
-                    </div>
-                    <a href={`http://${business.url}`}>{business.url}</a>
-                  </div>
+                  { this.renderPhoneDetail() }
+                  { this.renderUrlDetail() }
                   <div className="biz-edit-link h-box">
                     <div className="biz-icon-edit">
                       <i className="fa fa-pencil" aria-hidden="true"></i>

@@ -116,13 +116,15 @@ export default class BusinessForm extends React.Component {
     getGeoFromAddress(this.state.business)
       .then((data) => {
         if (data.status === "OK") {
+          const info = data.results[0].address_components;
           const place = data.results[0];
           const {lat, lng} = data.results[0].geometry.location;
-          const shortStateName = data.results[0].address_components[5].short_name;
+          const state = info[5].short_name;
+          const address = `${info[0].short_name} ${info[1].short_name}`;
           this.setState(
             merge(
               this.state,
-              {business: {lat, lng, state: shortStateName}, place}
+              {business: {lat, lng, state, address}, place}
             )
           );
         }

@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { configureStore } from './store/store';
 import Root from './components/root';
-import {getGeoFromAddress} from './util/map_api_util';
+import {getGeoFromAddress, getBusinessInfo} from './util/map_api_util';
 
 window.getGeoFromAddress = getGeoFromAddress;
+window.getBusinessInfo = getBusinessInfo;
 
 document.addEventListener('DOMContentLoaded', () => {
   const rootEl = document.getElementById('root');
