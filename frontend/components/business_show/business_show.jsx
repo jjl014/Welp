@@ -62,6 +62,7 @@ export default class BusinessShow extends React.Component {
     if (business) {
       return (
         <div className="biz-show-container max-w-1020 center">
+          <div className="top-shelf"></div>
           <div className="biz-page-main">
             <div className="biz-page-header">
               <div className="biz-header-left column-1-2">
@@ -110,7 +111,6 @@ export default class BusinessShow extends React.Component {
                 <div>
                   <h1>IMG3</h1>
                 </div>
-                <div className="top-shelf"></div>
               </div>
             </div>
           </div>
