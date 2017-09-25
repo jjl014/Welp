@@ -4,6 +4,7 @@ import merge from 'lodash/merge';
 import isEmpty from 'lodash/isEmpty';
 import {Link} from 'react-router-dom';
 import {addInputCallBack} from '../../util/general_util';
+import {getGeoFromAddress} from '../../util/map_api_util';
 
 const stateList = [
   "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado",
@@ -69,10 +70,6 @@ export default class BusinessForm extends React.Component {
 
   }
 
-  componentWillUnmount() {
-
-  }
-
   componentWillReceiveProps(newProps) {
     if (newProps.match.params.businessId !== this.props.match.params.businessId &&
         newProps.match.url !== '/businesses/new') {
@@ -104,27 +101,28 @@ export default class BusinessForm extends React.Component {
   }
 
   updateState() {
-    this.props.getGeoFromAddress(this.state.business)
+    getGeoFromAddress(this.state.business)
       .then((data) => {
         if (data.status === "OK") {
           const place = data.results[0];
           const {lat, lng} = data.results[0].geometry.location;
-          this.setState({business: { lat, lng }, place});
+          this.setState(merge(this.state, {business: {lat, lng}, place}));
         }
       });
   }
 
   update(field) {
     return (e) => {
-      this.setState({business: {[field]: e.target.value}});
+      this.setState(merge(this.state, {business: {[field]: e.target.value}}));
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const business = Object.assign({}, this.state);
+    const business = Object.assign({}, this.state.business);
     this.props.processForm(business, this.props.formType)
               .then((newBiz) => {
+                debugger;
                 const props = this.props;
                 props.history.push(`/businesses/${newBiz.business.id}`);
               });
@@ -165,6 +163,7 @@ export default class BusinessForm extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     let button;
     let header;
     if (this.props.formType === 'new') {
@@ -205,7 +204,7 @@ export default class BusinessForm extends React.Component {
               <button className="btn-primary biz-btn" onClick={this.handleSubmit}>{button}</button>
             </div>
             <div className="biz-update-map">
-              <Map place={this.state.place || {}}/>
+              <Map place={this.state.place} type="form"/>
             </div>
           </div>
         </div>
@@ -213,11 +212,3 @@ export default class BusinessForm extends React.Component {
     );
   }
 }
-
-// .then((data) => {
-//   if (data.status === "OK") {
-//     this.place = data.results[0];
-//     const {lat, lng} = data.results[0].geometry.location;
-//     this.setState({ lat, lng });
-//   }
-// });

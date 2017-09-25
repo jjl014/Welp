@@ -24,7 +24,7 @@ export default class BusinessSearch extends React.Component {
               <div className="map-wrapper">
                 <Route exact path="/businesses" component={MapContainer} />
               </div>
-              <Link to="/businesses/new">New Business</Link>
+              <button className="biz-btn btn-primary"><Link to="/businesses/new" >New Business</Link></button>
             </div>
           </div>
         )}/>

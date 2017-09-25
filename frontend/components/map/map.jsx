@@ -22,16 +22,31 @@ export default class Map extends React.Component {
     const map = this.refs.map;
     this.map = new google.maps.Map(map, mapOptions);
   }
+  //
+  // componentWillReceiveProps(newProps) {
+  //   if (newProps.place && (Object.keys(newProps.place).length !== 0)) {
+  //     const lat = newProps.place.geometry.location.lat;
+  //     const lng = newProps.place.geometry.location.lng;
+  //     const position = new google.maps.LatLng(lat, lng);
+  //     const marker = new google.maps.Marker({
+  //       position,
+  //       map: this.map,
+  //     });
+  //     this.map.setCenter(position);
+  //   }
+  // }
 
-  componentWillReceiveProps(newProps) {
-    if (!newProps.place || (Object.keys(newProps.place).length === 0)) return;
-    const lat = newProps.place.geometry.location.lat;
-    const lng = newProps.place.geometry.location.lng;
-    const position = new google.maps.LatLng(lat, lng);
-    const marker = new google.maps.Marker({
-      position,
-      map: this.map,
-   });
+  componentDidUpdate() {
+    if (this.props.type === "form" && this.props.place && (Object.keys(this.props.place).length !== 0)) {
+      const lat = this.props.place.geometry.location.lat;
+      const lng = this.props.place.geometry.location.lng;
+      const position = new google.maps.LatLng(lat, lng);
+      const marker = new google.maps.Marker({
+        position,
+        map: this.map,
+      });
+      this.map.setCenter(position);
+    }
   }
 
   render() {

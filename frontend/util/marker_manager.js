@@ -4,5 +4,7 @@ class MarkerManager {
     this.markers = {};
   }
 
+  updateMarkers(businesses) {
 
+  }
 }

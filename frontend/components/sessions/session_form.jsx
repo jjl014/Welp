@@ -22,36 +22,27 @@ export default class SessionForm extends React.Component {
 
   handleDemoLogin() {
     return (e) => {
-      e.preventDefault();
-      if (this.props.match.url !== '/login') {
-        this.props.history.push("/login");
-        setTimeout(this.handleDemo.bind(this), 1000);
-      } else {
-        this.handleDemo();
-      }
+      this.setState({username: "", password: ""});
+      const username = Array.from("demo_user");
+      const password = Array.from("123456");
+      let that = this;
+      const logInDemo = (demo) => {
+        const demoInterval = setInterval(() => {
+          if (username.length > 0) {
+            const user = demo.state.username + username.shift();
+            this.setState({username: user});
+          } else if (password.length > 0){
+            const pw = demo.state.password + password.shift();
+            this.setState({password: pw});
+          } else {
+            const user = Object.assign({}, demo.state);
+            clearInterval(demoInterval);
+            this.props.processForm(user, 'signin');
+          }
+        }, 100);
+      };
+      logInDemo(that);
     };
-  }
-
-  handleDemo() {
-    const username = Array.from("demo_user");
-    const password = Array.from("123456");
-    let that = this;
-    const logInDemo = (wut) => {
-      const demoInterval = setInterval(() => {
-        if (username.length > 0) {
-          const user = wut.state.username + username.shift();
-          this.setState({username: user});
-        } else if (password.length > 0){
-          const pw = wut.state.password + password.shift();
-          this.setState({password: pw});
-        } else {
-          const user = Object.assign({}, wut.state);
-          clearInterval(demoInterval);
-          this.props.processForm(user, 'signin');
-        }
-      }, 100);
-    };
-    logInDemo(that);
   }
 
   handleChange(field) {

@@ -27,24 +27,28 @@ export default class BusinessShow extends React.Component {
             <div className="biz-page-header">
               <div className="biz-header-left column-1-2">
                 <h1>{business.name}</h1>
+                <h3>{business.price}</h3>
               </div>
               <div className="biz-header-right column-1-2">
-                <button>Write a Review</button>
+                <div className="btn-container v-box">
+                  <button className="btn-primary btn-review">Write a Review</button>
+                </div>
               </div>
             </div>
             <div className="biz-info-media h-box">
               <div className="biz-info v-box col-1-3">
                 <div className="biz-map-cropped">
-                  <h1>Map</h1>
+                  <img src={`https://maps.googleapis.com/maps/api/staticmap?scale=2&center=${business.lat},${business.lng}&zoom=15&size=286x135&markers=color:red%7C%7C${business.lat},${business.lng}&key=AIzaSyATPzJ4_cbdsC14c4fJM1-Hwf5Fgta5L_A`}/>
                 </div>
                 <div className="biz-full-address">
                   <p>
                     {business.address}<br/>
-                    {business.city}, {business.state} {business.zipcode}
+                    {business.city}, {business.state} {business.zipcode}<br/>
+                    <a href={`http://${business.url}`}>{business.url}</a>
                   </p>
-                </div>
-                <div className="biz-edit-link">
-                  <Link to={`/businesses/${business.id}/edit`}>Edit</Link>
+                  <div className="biz-edit-link">
+                    <Link to={`/businesses/${business.id}/edit`}>Edit</Link>
+                  </div>
                 </div>
               </div>
               <div className="biz-album h-box col-2-3">
@@ -52,11 +56,12 @@ export default class BusinessShow extends React.Component {
                   <h1>IMG1</h1>
                 </div>
                 <div>
-                  <h1>IMG2</h1>
+                  <h1 id="img-2">IMG2</h1>
                 </div>
                 <div>
                   <h1>IMG3</h1>
                 </div>
+                <div className="top-shelf"></div>
               </div>
             </div>
           </div>
