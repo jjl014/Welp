@@ -25,7 +25,6 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   processForm: (business, formType) => {
-    debugger;
     if (formType === 'new') {
       return dispatch(createBusiness(business));
     } else {

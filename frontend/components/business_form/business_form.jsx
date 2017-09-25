@@ -43,9 +43,16 @@ export default class BusinessForm extends React.Component {
   }
 
   componentWillMount() {
-    if (this.props.formType !== 'new' && !this.props.business) {
+    if (this.props.formType !== 'new' && this.props.business) {
       this.props.fetchBusiness(this.props.match.params.businessId)
-                .then(() => this.setState(this.props.business));
+                  .then((newBiz) => {
+                    this.setState(
+                      merge(
+                        this.state,
+                        {business: newBiz.business}
+                      )
+                    );
+                  });
     }
     this.props.clearBusinessErrors();
   }
@@ -75,7 +82,12 @@ export default class BusinessForm extends React.Component {
         newProps.match.url !== '/businesses/new') {
       this.props.fetchBusiness(newProps.match.params.businessId)
                 .then((newBiz) => {
-                  this.setState(newBiz.business);
+                  this.setState(
+                    merge(
+                      this.state,
+                      {business: newBiz.business}
+                    )
+                  );
                 });
     } else if (!newProps.errors.length > 0) {
       this.resetState();
@@ -128,7 +140,6 @@ export default class BusinessForm extends React.Component {
     const business = Object.assign({}, this.state.business);
     this.props.processForm(business, this.props.formType)
               .then((newBiz) => {
-                debugger;
                 const props = this.props;
                 props.history.push(`/businesses/${newBiz.business.id}`);
               });
@@ -169,7 +180,6 @@ export default class BusinessForm extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     let button;
     let header;
     if (this.props.formType === 'new') {
