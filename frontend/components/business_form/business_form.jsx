@@ -106,7 +106,13 @@ export default class BusinessForm extends React.Component {
         if (data.status === "OK") {
           const place = data.results[0];
           const {lat, lng} = data.results[0].geometry.location;
-          this.setState(merge(this.state, {business: {lat, lng}, place}));
+          const shortStateName = data.results[0].address_components[5].short_name;
+          this.setState(
+            merge(
+              this.state,
+              {business: {lat, lng, state: shortStateName}, place}
+            )
+          );
         }
       });
   }

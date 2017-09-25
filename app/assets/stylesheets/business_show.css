@@ -3,6 +3,10 @@
   padding: 15px 0 24px 0;
 }
 
+.biz-show-container a:hover {
+  text-decoration: underline;
+}
+
 .biz-page-main {
   display: flex;
   flex-direction: column;
@@ -16,9 +20,8 @@
 .biz-page-header {
   display: flex;
   flex-direction: row;
-  height: 100px;
   justify-content: space-between;
-  border: solid 1px red;
+  margin-bottom: 9px;
 }
 
 .biz-info-media {
@@ -26,55 +29,61 @@
 }
 
 .biz-info {
+  box-sizing: border-box;
+  width: 300px;
   padding: 5px;
-  border: solid 1px magenta;
+  border: solid 1px #ccc;
 }
 
 .biz-edit-link {
-  float: right;
-  margin: 1px 3px;
-  border: solid 1px blue;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
 }
 
-.biz-header-left {
-  border: solid 1px green;
-  height: 100px;
+.biz-edit-link a {
+  font-size: 12px;
+  align-self: center;
+  margin-left: 3px;
 }
 
 .biz-header-right {
-  border: solid 1px orange;
   display: flex;
   justify-content: center;
-  height: 100px;
 }
 
 .biz-info-media {
-  border: solid 1px yellow;
   display: flex;
 }
 
 .biz-album {
   position: relative;
-  border: solid 1px purple;
-  width: 66.6667%;
   height: 100%;
 }
 
+.biz-album div {
+  display: flex;
+}
+
 .biz-album h1 {
-  height: 220px;
-  width: 220px;
+  height: 210px;
+  width: 210px;
+  align-self: center;
+  border: 1px solid #ccc;
 }
 
 #img-2 {
-  height: 250px;
-  width: 250px;
+  height: 235px;
+  width: 236px;
 }
 
 .biz-map-cropped {
   float: left;
   align-items: center;
-  display: inline-block;
   height: 135px;
+  border: 1px solid #ccc;
 }
 
 .biz-map-cropped img {
@@ -86,12 +95,9 @@
   display: inline-block;
 }
 
-.biz-full-address {
-  margin-top: 5px;
-}
-
-.biz-full-address p {
-  display: inline-block;
+.biz-full-info {
+  margin: 5px;
+  position: relative;
 }
 
 .btn-container {
@@ -104,14 +110,40 @@
   height: 36px;
 }
 
+.biz-icon {
+  display: flex;
+  justify-content: center;
+  float: left;
+  width: 18px;
+  height: 18px;
+  margin-right: 3px;
+}
+
+.fa-pencil {
+  color: #0073bb;
+}
+
+.biz-full-address {
+  font-weight: bold;
+}
+
+.biz-full-info div:not(:last-child) {
+  margin-bottom: 3px;
+}
+
+.biz-header-left div:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.biz-header-left h1 {
+  font-weight: bold;
+}
+
 .top-shelf {
   border-bottom: solid 1px #e6e6e6;
-  /*background-color: #f5f5f5;*/
   background-color: gray;
   z-index: -1;
   position: absolute;
-  bottom: 0;
-  top: -9999px;
-  left: -9999px;
-  right: -9999px;
+  top: 0;
+  height: 270px;
 }

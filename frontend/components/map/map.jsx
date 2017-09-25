@@ -5,7 +5,7 @@ import isEmpty from 'lodash/isEmpty';
 const mapOptions = {
   // San Francisco
   center: {lat: 37.7758, lng: -122.435 },
-  zoom: 13
+  zoom: 14
 };
 
 const getCoordsObj = latLng => ({
