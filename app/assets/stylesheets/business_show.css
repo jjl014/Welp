@@ -100,8 +100,8 @@
 }
 
 .btn-container {
-  display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .btn-review {
@@ -148,4 +148,27 @@
   right: 0;
   height: 418px;
   width: 100%;
+}
+
+.widget .header .sources .source.active {
+    background-color: #d32323 !important;
+}
+
+.widget .header {
+    min-height: 51px;
+    border-color: #d32323 !important;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    position: relative;
+}
+/* Review Index */
+.review-index-container {
+  margin: 0 15px;
+}
+
+/* Review Index Item */
+li.review-index-item {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 18px 0 17px 0;
+  margin: 0;
 }

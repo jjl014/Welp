@@ -15,6 +15,7 @@ export default class UploadButton extends React.Component {
         (error, images) => {
           if (error === null) {
             //upload successful
+            
           }
         }
       );

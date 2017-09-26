@@ -112,7 +112,11 @@ export default class SessionForm extends React.Component {
       <div className="session-container">
         <div className="session-body-responsive">
           <header className="session-header">
-            <Link to="/">Welp</Link>
+            <Link to="/">
+              <div className="welp-logo-wrapper">
+                <img className="welp-logo" src="https://res.cloudinary.com/jun/image/upload/v1506394573/Welp_Small_rubaei.png" alt="Welp Logo"/>
+              </div>
+            </Link>
           </header>
           <div className="session-form-wrapper">
             {this.renderErrors()}

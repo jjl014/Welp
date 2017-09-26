@@ -11,6 +11,7 @@ class User < ApplicationRecord
     class_name: :Business
 
   has_many :images
+  has_many :reviews
 
   attr_reader :password
 

@@ -6,3 +6,11 @@ export const postImage = (url) => {
     data: {image}
   });
 };
+
+export const getImagesByBizId = (businessId) => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/images',
+    data: {business_id: businessId}
+  })
+);

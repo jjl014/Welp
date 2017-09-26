@@ -2,10 +2,10 @@ class Api::ImagesController < ApplicationController
   def index
     if params[:business_id]
       @images = Images.find(params[:business_id])
+      render :index
     else
-      @images = Images.all
+
     end
-    render :index
   end
 
   def create

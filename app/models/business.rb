@@ -7,4 +7,5 @@ class Business < ApplicationRecord
     class_name: :User
 
   has_many :images
+  has_many :reviews
 end

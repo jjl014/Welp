@@ -1,9 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import UploadButton from './upload_button';
+import BusinessAlbumContainer from './business_album_container';
+import ReviewIndexContainer from '../review/review_index_container';
 
 export default class BusinessShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      images: {}
+    };
   }
 
   componentDidMount() {
@@ -73,8 +79,9 @@ export default class BusinessShow extends React.Component {
                 <div className="biz-header-price-category"><h3>{business.price}</h3></div>
               </div>
               <div className="biz-header-right column-1-2">
-                <div className="btn-container v-box">
+                <div className="btn-container h-box">
                   <button className="btn-primary btn-review"><i className="fa fa-lg fa-star" aria-hidden="true"></i>&nbsp;&nbsp;Write a Review&nbsp;</button>
+                  <UploadButton business={business}/>
                 </div>
               </div>
             </div>
@@ -101,18 +108,11 @@ export default class BusinessShow extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="biz-album h-box">
-                <div>
-                  <h1>IMG1</h1>
-                </div>
-                <div>
-                  <h1 id="img-2">IMG2</h1>
-                </div>
-                <div>
-                  <h1>IMG3</h1>
-                </div>
-              </div>
+              <BusinessAlbumContainer images={this.state.images}/>
             </div>
+          </div>
+          <div className="biz-page-review-info">
+            <ReviewIndexContainer business={business}/>
           </div>
         </div>
       );

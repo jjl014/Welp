@@ -22,3 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   ReactDOM.render(<Root store={store}/>, rootEl);
 });
+
+// Testing
+import {fetchReviews, fetchReview, createReview, destroyReview, updateReview} from './actions/review_actions';
+
+window.fetchReview = fetchReview;
+window.fetchReviews = fetchReviews;
+window.createReview = createReview;
+window.destroyReview = destroyReview;
+window.updateReview = updateReview;

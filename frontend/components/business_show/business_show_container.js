@@ -3,6 +3,7 @@ import BusinessShow from './business_show';
 import {selectBusinessById} from '../../reducers/selectors';
 import {fetchBusiness, updateBusiness} from '../../actions/business_actions';
 
+
 const mapStateToProps = (state, ownProps) => ({
   business: selectBusinessById(state.entities, ownProps.match.params.businessId)
 });
