@@ -10,6 +10,8 @@ class User < ApplicationRecord
     foreign_key: :owner_id,
     class_name: :Business
 
+  has_many :images
+
   attr_reader :password
 
 

@@ -74,7 +74,7 @@ export default class BusinessShow extends React.Component {
               </div>
               <div className="biz-header-right column-1-2">
                 <div className="btn-container v-box">
-                  <button className="btn-primary btn-review">Write a Review</button>
+                  <button className="btn-primary btn-review"><i className="fa fa-lg fa-star" aria-hidden="true"></i>&nbsp;&nbsp;Write a Review&nbsp;</button>
                 </div>
               </div>
             </div>

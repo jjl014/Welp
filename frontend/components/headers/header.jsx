@@ -10,7 +10,11 @@ export default class Header extends React.Component {
     return (
       <div className="header-container">
         <header className="biz-header">
-          <Link to="/">Welp</Link>
+          <Link to="/">
+            <div className="welp-logo-wrapper">
+              <img className="welp-logo" src="https://res.cloudinary.com/jun/image/upload/v1506394573/Welp_Small_rubaei.png" alt="Welp Logo"/>
+            </div>
+          </Link>
         </header>
       </div>
     );
