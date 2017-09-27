@@ -111,8 +111,12 @@ export default class BusinessShow extends React.Component {
               <BusinessAlbumContainer images={this.state.images}/>
             </div>
           </div>
-          <div className="biz-page-review-info">
-            <ReviewIndexContainer business={business}/>
+          <div className="biz-page-review-info h-box">
+            <ReviewIndexContainer className="column-alpha" business={business}/>
+            <div className="biz-more-info column-1-3">
+              <h1>BUSINESS HOURS</h1>
+              <h3>AND OTHER INFO</h3>
+            </div>
           </div>
         </div>
       );

@@ -161,9 +161,17 @@
     border-bottom-style: solid;
     position: relative;
 }
+
+.biz-more-info {
+  padding-left: 30px;
+  margin-right: 15px;
+}
+
 /* Review Index */
 .review-index-container {
-  margin: 0 15px;
+  border-right: 1px solid #e6e6e6;
+  padding-right: 30px;
+  margin-left: 15px;
 }
 
 /* Review Index Item */
@@ -171,4 +179,8 @@ li.review-index-item {
   border-bottom: 1px solid #e6e6e6;
   padding: 18px 0 17px 0;
   margin: 0;
+}
+
+.review-main {
+
 }
