@@ -16,12 +16,9 @@ export default class ReviewIndex extends React.Component {
     });
     const business = this.props.business;
     return(
-      <div className="review-index-container column-2-3">
-        <h2>Reviews <b>for {business.name}</b></h2>
         <ul className= "review-index-ul">
           {reviews}
         </ul>
-      </div>
     );
   }
 }

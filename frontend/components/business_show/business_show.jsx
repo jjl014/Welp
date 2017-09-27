@@ -114,7 +114,10 @@ export default class BusinessShow extends React.Component {
             </div>
           </div>
           <div className="biz-page-review-info h-box">
-            <ReviewIndexContainer className="column-alpha" business={business}/>
+            <div className="review-index-container column-2-3">
+              <h2>Reviews <b>for {business.name}</b></h2>
+              <ReviewIndexContainer business={business}/>
+            </div>
             <div className="biz-more-info column-1-3">
               <h1>BUSINESS HOURS</h1>
               <h3>AND OTHER INFO</h3>

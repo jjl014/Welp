@@ -3,7 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .review-form-container {
-  padding: 15px 15px 36px 15px;;
+  padding: 15px 15px 36px 15px;
+  max-width: 1020px;
+  min-width: 1020px;
+  margin: 0 auto;
 }
 
 /* Review Index */
@@ -41,8 +44,100 @@ li.review-index-item {
   margin-bottom: 11px;
 }
 
-.btn-review-submit {
-  padding: 5px 8px;
+.biz-page-review-info {
+  padding-top: 18px;
+}
+
+.review-form-input {
+  padding: 18px 15px 0 15px;
+  border: solid 1px #999;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+}
+
+.review-form-input:focus-within {
+  border-color: #0073bb;
+  box-shadow: 0 0 4px rgba(0,115,187,0.3);
+  color: #333;
+}
+
+.review-textarea-wrapper {
+  padding-top: 11px;
+}
+
+.review-textarea{
+  border: none;
+  resize: none;
+  height: 152px;
+  min-height: 156px;
+  font-size: 14px;
+  padding: 2px;
+  width: 100%;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.review-button-container {
+  align-items: center;
+}
+
+.review-button-container a {
+  padding: 5px 0 5px 12px;
+}
+
+.review-button-container a:hover {
+  text-decoration: underline;
+}
+
+.review-samples .user-profile-pic {
+  height: 30px;
+  width: 30px;
+}
+
+.review-samples .review-index-item {
+  flex-direction: column;
+}
+
+.rating-stars {
+  margin-bottom: 18px;
+}
+
+.review-form-wrapper label {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.biz-img {
+  width: 60px;
+  height: 60px;
+  margin-right: 12px;
+}
+
+.biz-img img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.review-biz-info {
+  margin-bottom: 12px;
+}
+
+.review-biz-name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.review-biz-details div:not(:first-child) {
   font-size: 12px;
-  line-height: 1.5em;
+}
+
+.review-biz-details div:not(:last-child) {
+  margin-bottom: 2px;
 }
