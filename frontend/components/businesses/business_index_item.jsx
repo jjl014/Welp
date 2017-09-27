@@ -12,7 +12,7 @@ const BusinessIndexItem = ({business}) => {
             <div className="biz-media-story">
               <div className="biz-name"><Link to={`/businesses/${business.id}`}>{business.name}</Link></div>
               <div className="biz-rating">5</div>
-              <div className="biz-price-category">$$</div>
+              <div className="biz-price-category">{business.price}</div>
             </div>
           </div>
           <div className="biz-address">
@@ -21,7 +21,8 @@ const BusinessIndexItem = ({business}) => {
             {business.phone}
           </div>
         </div>
-        <div className="biz-review-preview">
+        <div className="biz-review-preview h-box">
+          <img className="user-profile-pic" src="https://res.cloudinary.com/jun/image/upload/v1506464949/user_60_square_dsxggt.png" alt="User Logo"/>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -31,5 +32,15 @@ const BusinessIndexItem = ({business}) => {
     </div>
   );
 };
+
+function truncateText(selector, maxLength) {
+    var element = document.querySelector(selector),
+        truncated = element.innerText;
+
+    if (truncated.length > maxLength) {
+        truncated = truncated.substr(0,maxLength) + '...';
+    }
+    return truncated;
+}
 
 export default BusinessIndexItem;

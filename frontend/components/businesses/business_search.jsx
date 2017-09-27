@@ -6,7 +6,7 @@ import MapContainer from '../map/map_container';
 import BusinessFormContainer from '../business_form/business_form_container';
 import BusinessShowContainer from '../business_show/business_show_container';
 import ReviewFormContainer from '../review/review_form_container';
-import Header from '../headers/header';
+import HeaderContainer from '../headers/header_container';
 import {ProtectedRoute} from '../../util/route_util';
 
 export default class BusinessSearch extends React.Component {
@@ -17,7 +17,7 @@ export default class BusinessSearch extends React.Component {
   render() {
     return (
       <div className="biz-search-container">
-        <Header />
+        <HeaderContainer />
         <Route exact path="/businesses" component={FilterContainer} />
         <Route exact path="/businesses" render={() => (
           <div className="biz-search-wrap">

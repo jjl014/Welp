@@ -82,6 +82,7 @@ nav {
   align-items: center;
   justify-content: center;
   height: 100%;
+  padding-top: 80px;
 }
 
 .link-logo {
@@ -92,4 +93,93 @@ nav {
 
 .main-body-responsive {
   min-width: 1020px;
+}
+
+.main-inner-container .search-find-wrapper {
+  background: #fff;
+  border-radius: 4px 0 0 4px;
+  width: 100%;
+  align-items: center;
+  position: relative;
+}
+
+.main-inner-container .search-near-wrapper {
+  background: #fff;
+  border-radius: 0 4px 4px 0;
+  width: 100%;
+  align-items: center;
+}
+
+.main-inner-container .search-find {
+  border: none;
+}
+
+.main-inner-container .search-near {
+  border: none;
+}
+
+.search-find-wrapper .line-break {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 0;
+  bottom: 8px;
+  width: 1px;
+  background-color: #ccc;
+}
+
+.search-bar label {
+  color: #666;
+  margin-right: 12px;
+  font-weight: bold;
+  cursor: default;
+  font-size: 19px;
+  margin-left: 12px;
+}
+
+.search-bar button {
+  color: white;
+  border-radius: 0 4px 4px 0;
+  border: 0;
+  background: #d32323;
+  padding: 15px 23px 15px;
+  box-shadow: none;
+  width: 64px;
+}
+
+.search-bar button:hover {
+  background: #be2020;
+}
+
+.search-bar {
+  min-width: 960px;
+}
+
+.search-bar input {
+  -webkit-appearance: none;
+  outline: none;
+  font-size: 18px;
+  align-self: center;
+}
+
+.main-inner-container .welp-logo-wrapper {
+  margin-bottom: 30px;
+}
+
+.homepage-categories h3 {
+  color: white;
+  padding-bottom: 0px;
+}
+
+.homepage-categories a {
+  padding: 8px;
+}
+
+.homepage-categories a:hover {
+  text-decoration: underline white;
+}
+
+.fa-cutlery {
+  color: white;
+  align-self: center;
 }

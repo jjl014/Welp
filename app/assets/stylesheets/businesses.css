@@ -16,6 +16,16 @@
   justify-content: space-between;
 }
 
+.biz-review-preview img {
+  object-fit: cover;
+  width: 30px;
+  height: 30px;
+}
+
+.biz-review-preview p {
+  text-overflow: ellipsis;
+}
+
 .biz-main-listing {
   display: flex;
   flex-direction: row;
@@ -54,8 +64,6 @@
   min-width: 1020px;
   padding-bottom: 36px;
 }
-
-
 
 .biz-search-wrap {
   padding: 15px;

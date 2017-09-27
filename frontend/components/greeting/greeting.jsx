@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchContainer from '../search/search_container';
 
 export default class Greeting extends React.Component {
   constructor(props) {
@@ -9,6 +10,12 @@ export default class Greeting extends React.Component {
   signoff() {
     return (e) => {
       this.props.signout();
+    };
+  }
+
+  handleClick() {
+    return (e) => {
+      this.props.searchBusinesses();
     };
   }
 
@@ -41,7 +48,12 @@ export default class Greeting extends React.Component {
                 <img className="welp-logo-2" src="https://res.cloudinary.com/jun/image/upload/v1506394576/Welp_vdjbyh.png" alt="Welp Logo"/>
               </div>
             </Link>
-            <Link to="/businesses"><h2>Restuarants</h2></Link>
+            <SearchContainer />
+            <ul className="homepage-categories h-box">
+              <div className="category-restuarants h-box">
+                <i className="fa fa-cutlery" aria-hidden="true"></i><Link onClick={this.handleClick()} to="/businesses"><h3>Restuarants</h3></Link>
+              </div>
+            </ul>
           </div>
         </div>
       </div>

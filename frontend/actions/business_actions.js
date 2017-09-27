@@ -4,6 +4,7 @@ export const REMOVE_BUSINESS = "REMOVE_BUSINESS";
 export const UPDATE_BUSINESS = "UPDATE_BUSINESS";
 export const CLEAR_BUSINESS_ERRORS = "CLEAR_BUSINESS_ERRORS";
 export const RECEIVE_BUSINESS_ERRORS = "RECEIVE_BUSINESS_ERRORS";
+export const RECEIVE_SEARCH_BUSINESSES = "RECEIVE_SEARCH_BUSINESSES";
 
 import {
   getAllBusinesses,
@@ -11,6 +12,8 @@ import {
   postBusiness,
   patchBusiness,
   destroyBusiness } from '../util/business_api_util';
+
+import {filterBusinesses} from '../util/search_api_util';
 
 export const receiveBusinesses = (businesses) => ({
   type: RECEIVE_BUSINESSES,
@@ -41,6 +44,11 @@ export const clearBusinessErrors = () => ({
   type: CLEAR_BUSINESS_ERRORS
 });
 
+export const receiveSearchBusinesses = (businesses) => ({
+  type: RECEIVE_SEARCH_BUSINESSES,
+  businesses
+});
+
 export const fetchBusinesses = () => dispatch => (
   getAllBusinesses()
     .then((businesses) => dispatch(receiveBusinesses(businesses)))
@@ -66,4 +74,9 @@ export const updateBusiness = (business) => dispatch => (
 export const deleteBusiness = (businessId) => dispatch => (
   destroyBusiness(businessId)
     .then(() => dispatch(removeBusiness(businessId)))
+);
+
+export const searchBusinesses = (searchKeyword) => dispatch => (
+  filterBusinesses(searchKeyword)
+    .then((businesses) => dispatch(receiveSearchBusinesses(businesses)))
 );

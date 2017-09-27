@@ -19,9 +19,10 @@ export default class Header extends React.Component {
         <div className="main-header-nav-wrapper h-box">
           <div className="main-header-nav h-box">
             <div className="h-box">
+              <Link className="header-nav-link" to='/businesses'><i className="fa fa-cutlery" aria-hidden="true"></i> Restuarants</Link>
+              <Link className="header-nav-link new-biz-link" to='/businesses/new'>New Business</Link>
             </div>
             <div className="h-box">
-              <Link className="header-nav-link new-biz-link" to='/businesses/new'>New Business</Link>
             </div>
           </div>
         </div>

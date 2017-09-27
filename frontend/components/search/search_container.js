@@ -1,15 +1,13 @@
 import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import Search from './search';
-
-const mapStateToProps = state => ({
-  businesses: state.entities.businesses
-});
+import {searchBusinesses} from '../../actions/business_actions';
 
 const mapDispatchToProps = dispatch => ({
-  
+  searchBusinesses: (searchKeyword) => dispatch(searchBusinesses(searchKeyword))
 });
 
-connect(
-  mapStateToProps,
+export default withRouter(connect(
+  undefined,
   mapDispatchToProps
-)(Search);
+)(Search));

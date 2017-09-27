@@ -34,6 +34,14 @@ li.review-index-item {
   width: 37.5%;
 }
 
+.review-sample-wrapper .user-info-wrapper {
+  align-items: center;
+}
+
+.review-sample-wrapper ul li:first-child {
+  padding-top: 0;
+}
+
 .review-main {
   width: 62.5%;
 }
@@ -185,36 +193,8 @@ li.review-index-item {
   background-position: 0 0;
 }
 
-// .stars-large {
-//   background: transparent url("https://res.cloudinary.com/jun/image/upload/q_100/v1506492847/yelp_stars_fhsywr.png") no-repeat top left;
-//   width: 134px;
-//   height: 240px;
-// }
-
-form
-
-.stars-lg-0 {
-
-}
-
-.stars-lg-1 {
-
-}
-
-.stars-lg-2 {
-
-}
-
-.stars-lg-3 {
-
-}
-
-.stars-lg-4 {
-
-}
-
-.stars-lg-5 {
-
+.stars-large {
+  background: transparent url("https://res.cloudinary.com/jun/image/upload/v1506362363/five_stars_wbd6ym.png") no-repeat top left;
 }
 
 .stars-medium {
