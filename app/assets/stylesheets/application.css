@@ -47,6 +47,24 @@ button{
   background: linear-gradient(#ed0008, #dd1600);
 }
 
+.btn-primary-small {
+  color: white;
+  border-radius: 3px;
+  padding: 5px 8px;
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 1.5em;
+  border: solid 1px #8d0005;
+  background-color: #d90007;
+  background: linear-gradient(#d90007, #c91400);
+  width: auto;
+}
+
+.btn-primary-small:hover {
+  background-color: #ed0008;
+  background: linear-gradient(#ed0008, #dd1600);
+}
+
 a {
   text-decoration: none;
   color: #0073bb;
@@ -94,6 +112,13 @@ h2 {
 h2 b {
   color: rgb(51, 51, 51);
   font-weight: normal;
+}
+
+h3 {
+  color: #d32323;
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 6px;
 }
 
 input {
@@ -157,4 +182,12 @@ input[type="number"] {
 
 .welp-logo-wrapper {
   display: flex;
+}
+
+.border-layout-right {
+  border-right: 1px solid #e6e6e6;
+}
+
+.border-layout-bottom {
+  border-bottom: 1px solid #e6e6e6;
 }

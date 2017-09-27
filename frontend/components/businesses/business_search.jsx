@@ -5,7 +5,9 @@ import FilterContainer from '../filter/filter_container';
 import MapContainer from '../map/map_container';
 import BusinessFormContainer from '../business_form/business_form_container';
 import BusinessShowContainer from '../business_show/business_show_container';
+import ReviewFormContainer from '../review/review_form_container';
 import Header from '../headers/header';
+import {ProtectedRoute} from '../../util/route_util';
 
 export default class BusinessSearch extends React.Component {
   constructor(props) {
@@ -29,8 +31,10 @@ export default class BusinessSearch extends React.Component {
           </div>
         )}/>
         <Switch>
+          <ProtectedRoute path="/businesses/:businessId/reviews/new" component={ReviewFormContainer}/>
+          <ProtectedRoute path="/businesses/:businessId/reviews/:reviewId/edit" component={ReviewFormContainer}/>
           <Route exact path="/businesses/:businessId/edit" component={BusinessFormContainer}/>
-          <Route exact path="/businesses/new" component={BusinessFormContainer} />
+          <ProtectedRoute exact path="/businesses/new" component={BusinessFormContainer} />
           <Route path="/businesses/:businessId" component={BusinessShowContainer}/>
         </Switch>
       </div>

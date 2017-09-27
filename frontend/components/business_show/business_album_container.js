@@ -3,6 +3,7 @@ import BusinessAlbum from './business_album';
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    
   };
 };
 

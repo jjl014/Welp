@@ -80,7 +80,9 @@ export default class BusinessShow extends React.Component {
               </div>
               <div className="biz-header-right column-1-2">
                 <div className="btn-container h-box">
-                  <button className="btn-primary btn-review"><i className="fa fa-lg fa-star" aria-hidden="true"></i>&nbsp;&nbsp;Write a Review&nbsp;</button>
+                  <Link to={`/businesses/${business.id}/reviews/new`}>
+                    <button className="btn-primary btn-review"><i className="fa fa-lg fa-star" aria-hidden="true"></i>&nbsp;&nbsp;Write a Review&nbsp;</button>
+                  </Link>
                   <UploadButton business={business}/>
                 </div>
               </div>

@@ -1,3 +1,48 @@
 // Place all the styles related to the Reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.review-form-container {
+  padding: 15px 15px 36px 15px;;
+}
+
+/* Review Index */
+.review-index-container {
+  border-right: 1px solid #e6e6e6;
+  padding-right: 30px;
+  margin-left: 15px;
+}
+
+/* Review Index Item */
+li.review-index-item {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 18px 0 17px 0;
+  margin: 0;
+}
+
+.user-profile-pic {
+  margin-right: 9px;
+}
+
+.review-rating-date {
+  margin: 6px 0;
+  align-items: center;
+}
+
+.review-rating {
+  margin-right: 6px;
+}
+
+.review-date {
+  color: #666;
+}
+
+.section-header {
+  margin-bottom: 11px;
+}
+
+.btn-review-submit {
+  padding: 5px 8px;
+  font-size: 12px;
+  line-height: 1.5em;
+}
