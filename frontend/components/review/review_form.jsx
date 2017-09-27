@@ -7,12 +7,28 @@ export default class ReviewForm extends React.Component {
     super(props);
     this.state = {
       body: "",
-      rating: ""
+      rating: 5
     };
   }
 
   componentWillMount() {
-    this.props.fetchBusiness(this.props.match.params.businessId);
+    if(!this.props.business) {
+      this.props.fetchBusiness(this.props.match.params.businessId);
+    }
+    if (this.props.formType !== 'edit' && !this.props.review) {
+      this.props.fetchReview(this.props.match.params.reviewId)
+                .then((review) => {
+                  this.setState(review);
+                });
+
+    }
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.review) {
+      const review = newProps.review;
+      this.setState({body: review.body, rating: review.rating});
+    }
   }
 
   componentDidUpdate() {
@@ -37,7 +53,20 @@ export default class ReviewForm extends React.Component {
   }
 
   handleSubmit() {
-
+    return(e) => {
+      e.preventDefault();
+      const business = this.props.business;
+      const oldReview = this.props.review;
+      let review = this.state;
+      if (this.props.formType === 'edit') {
+        review = Object.assign({}, oldReview, {body: this.state.body, rating: this.state.rating});
+      }
+      this.props.processForm(this.props.formType, review, this.props.business.id)
+                .then(() => {
+                  debugger;
+                  this.props.history.push(`/businesses/${this.props.business.id}`);
+                });
+    };
   }
 
   render() {
@@ -49,7 +78,7 @@ export default class ReviewForm extends React.Component {
       header = "Write a Review";
     }
     if (business) {
-      return(
+      return (
         <div className="review-form-container h-box">
           <div className="review-form-wrapper v-box column-alpha border-layout-right">
             <div className="section-header">
@@ -80,9 +109,13 @@ export default class ReviewForm extends React.Component {
             <div className="review-form">
               <div className="review-form-input">
                 <div className="rating-input border-layout-bottom">
-                  <div className="rating-stars">
+                  <div className="stars-large">
                     Rating Input
+                    <span></span>
                   </div>
+                  <div className="stars-large">
+                  </div>
+                  <div id="rating-tooltip"></div>
                 </div>
                 <div className="review-textarea-wrapper">
                   <textarea ref="reviewTextarea" className="review-textarea"

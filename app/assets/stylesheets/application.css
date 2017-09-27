@@ -121,6 +121,11 @@ h3 {
   padding-bottom: 6px;
 }
 
+h4 {
+  font-weight: bold;
+  font-size: 14px;
+}
+
 input {
   padding: 5px 9px;
   border-radius: 3px;

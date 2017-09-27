@@ -16,15 +16,33 @@
   margin-left: 15px;
 }
 
+.review-index-container h2 {
+  padding: 0 15px;
+}
+
 /* Review Index Item */
 li.review-index-item {
   border-bottom: 1px solid #e6e6e6;
   padding: 18px 0 17px 0;
   margin: 0;
+  margin-left: 15px;
+}
+
+.user-info-wrapper {
+  padding-right: 15px;
+  margin-top: 6px;
+  width: 37.5%;
+}
+
+.review-main {
+  width: 62.5%;
 }
 
 .user-profile-pic {
   margin-right: 9px;
+  object-fit: cover;
+  height: 60px;
+  width: 60px;
 }
 
 .review-rating-date {
@@ -140,4 +158,77 @@ li.review-index-item {
 
 .review-biz-details div:not(:last-child) {
   margin-bottom: 2px;
+}
+
+.user-info p {
+  font-size: 12px;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+.user-info b {
+  font-weight: bold;
+  font-size: 12px;
+}
+[placeholder]:focus::-webkit-input-placeholder { color:transparent !important; }
+[placeholder]:focus:-moz-placeholder { color:transparent !important; } /* FF 4-18 */
+[placeholder]:focus::-moz-placeholder { color:transparent !important; } /* FF 19+ */
+[placeholder]:focus:-ms-input-placeholder { color:transparent !important; } /* IE 10+ */
+
+/* Rating Stars */
+.rating-stars {
+  overflow: hidden;
+}
+
+.rating-stars:hover {
+  background-position: 0 0;
+}
+
+// .stars-large {
+//   background: transparent url("https://res.cloudinary.com/jun/image/upload/q_100/v1506492847/yelp_stars_fhsywr.png") no-repeat top left;
+//   width: 134px;
+//   height: 240px;
+// }
+
+form
+
+.stars-lg-0 {
+
+}
+
+.stars-lg-1 {
+
+}
+
+.stars-lg-2 {
+
+}
+
+.stars-lg-3 {
+
+}
+
+.stars-lg-4 {
+
+}
+
+.stars-lg-5 {
+
+}
+
+.stars-medium {
+  background: transparent url("https://res.cloudinary.com/jun/image/upload/q_100/v1506492847/yelp_stars_fhsywr.png") no-repeat;
+  background-position: 0px -240px;
+  left: 0;
+  width: 102px;
+  height: 180px;
+}
+
+.stars-small {
+  background: transparent url("https://res.cloudinary.com/jun/image/upload/q_100/v1506492847/yelp_stars_fhsywr.png") no-repeat;
+  left: 0;
+  background-position: 0px -420px;
+  width: 82px;
+  height: 140px;
 }

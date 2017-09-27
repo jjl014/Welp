@@ -37,8 +37,8 @@ export const createReview = (businessId, review) => dispatch => (
     .then((newReview) => dispatch(receiveReview(newReview)))
 );
 
-export const updateReview = (review) => dispatch => (
-  patchReview(review)
+export const updateReview = (businessId, review) => dispatch => (
+  patchReview(businessId, review)
     .then((updatedReview) => dispatch(receiveReview(updatedReview)))
 );
 

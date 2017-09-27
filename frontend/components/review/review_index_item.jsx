@@ -1,12 +1,17 @@
 import React from 'react';
 
-const ReviewIndexItem = ({review, currentUser}) => {
-  console.log(review);
+const ReviewIndexItem = ({review}) => {
+  let rev = "review";
+  if (review.user.num_reviews > 1) {
+    rev = "reviews";
+  }
   return (
     <li className="review-index-item h-box">
-      <div className="user-info-wrapper">
+      <div className="user-info-wrapper h-box">
         <img className="user-profile-pic" src="https://res.cloudinary.com/jun/image/upload/v1506464949/user_60_square_dsxggt.png" alt="User Logo"/>
         <div className="user-info">
+          <h4>{review.user.username}</h4>
+          <p><b>{review.user.num_reviews}</b> {rev}</p>
         </div>
       </div>
       <div className="review-main v-box">

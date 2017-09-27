@@ -24,11 +24,24 @@ export default class BusinessShow extends React.Component {
     }
   }
 
-  updateLatLng() {
-    const {business} = this.props;
-    if (!business.lat || !business.lng) {
+  renderReviewButton() {
+    let button = "Write a Review";
+    let path = "reviews/new";
+    const currentUserId = this.props.currentUser.id;
+    this.props.reviews.forEach(review => {
+      if (review.user_id === currentUserId) {
+        button = "Edit Review";
+        path = `reviews/${review.id}/edit`;
+      }
+    });
 
-    }
+    return (
+      <Link to={`/businesses/${this.props.business.id}/${path}`}>
+        <button className="btn-primary btn-review">
+          <i className="fa fa-lg fa-star" aria-hidden="true"></i>&nbsp;&nbsp;{button}&nbsp;
+        </button>
+      </Link>
+    );
   }
 
   renderPhoneDetail() {
@@ -80,9 +93,7 @@ export default class BusinessShow extends React.Component {
               </div>
               <div className="biz-header-right column-1-2">
                 <div className="btn-container h-box">
-                  <Link to={`/businesses/${business.id}/reviews/new`}>
-                    <button className="btn-primary btn-review"><i className="fa fa-lg fa-star" aria-hidden="true"></i>&nbsp;&nbsp;Write a Review&nbsp;</button>
-                  </Link>
+                  {this.renderReviewButton()}
                   <UploadButton business={business}/>
                 </div>
               </div>

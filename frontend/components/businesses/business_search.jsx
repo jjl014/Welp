@@ -26,12 +26,11 @@ export default class BusinessSearch extends React.Component {
               <div className="map-wrapper">
                 <Route exact path="/businesses" component={MapContainer} />
               </div>
-              <button className="biz-btn btn-primary"><Link to="/businesses/new" >New Business</Link></button>
             </div>
           </div>
         )}/>
         <Switch>
-          <ProtectedRoute path="/businesses/:businessId/reviews/new" component={ReviewFormContainer}/>
+          <ProtectedRoute exact path="/businesses/:businessId/reviews/new" component={ReviewFormContainer}/>
           <ProtectedRoute path="/businesses/:businessId/reviews/:reviewId/edit" component={ReviewFormContainer}/>
           <Route exact path="/businesses/:businessId/edit" component={BusinessFormContainer}/>
           <ProtectedRoute exact path="/businesses/new" component={BusinessFormContainer} />

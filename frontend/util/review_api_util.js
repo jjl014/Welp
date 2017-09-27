@@ -20,13 +20,14 @@ export const postReview = (businessId, review) => (
   })
 );
 
-export const patchReview = (review) => (
-  $.ajax({
+export const patchReview = (businessId, review) => {
+  debugger;
+  return $.ajax({
     method: 'PATCH',
-    url: `api/reviews/${review.id}`,
+    url: `api/businesses/${businessId}/reviews/${review.id}`,
     data: {review}
-  })
-);
+  });
+};
 
 export const deleteReview = (reviewId) => (
   $.ajax({

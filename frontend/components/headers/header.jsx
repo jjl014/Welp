@@ -16,6 +16,15 @@ export default class Header extends React.Component {
             </div>
           </Link>
         </header>
+        <div className="main-header-nav-wrapper h-box">
+          <div className="main-header-nav h-box">
+            <div className="h-box">
+            </div>
+            <div className="h-box">
+              <Link className="header-nav-link new-biz-link" to='/businesses/new'>New Business</Link>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

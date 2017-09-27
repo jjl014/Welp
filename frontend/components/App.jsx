@@ -5,7 +5,7 @@ import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './sessions/session_form_container';
 import BusinessIndexContainer from './businesses/business_index_container';
 import BusinessSearch from './businesses/business_search';
-
+// import ReviewFormContainer from './review/review_form_container'
 
 const App = () => {
   return (
@@ -19,3 +19,5 @@ const App = () => {
 };
 
 export default App;
+
+// <ProtectedRoute path="/reviews/:reviewId/edit" component={ReviewFormContainer}/>

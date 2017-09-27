@@ -8,8 +8,9 @@ export default class Filter extends React.Component {
   render() {
     return (
       <div className="filter-container">
-        <h1>Filter Container</h1>
       </div>
     );
   }
 }
+
+// <h1>Filter Container</h1>

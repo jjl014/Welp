@@ -55,20 +55,7 @@
   padding-bottom: 36px;
 }
 
-.biz-header {
-  background-color: #d32323;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 64px;
-  width: 100%;
-  min-width: 1020px;
-}
 
-.biz-header a {
-  color: white;
-  font-size: 40px;
-}
 
 .biz-search-wrap {
   padding: 15px;

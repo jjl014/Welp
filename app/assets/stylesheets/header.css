@@ -1,0 +1,38 @@
+.biz-header {
+  background-color: #d32323;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  width: 100%;
+  min-width: 1020px;
+}
+
+.biz-header a {
+  color: white;
+  font-size: 40px;
+}
+
+.main-header-nav-wrapper {
+  width: 100%;
+  background-color: #bd1f1f;
+  justify-content: center;
+}
+
+.main-header-nav {
+  width: 960px;
+  justify-content: space-between;
+}
+
+.header-nav-link {
+    color: #fff;
+    display: inline-block;
+    padding: 3px 15px;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 21px;
+}
+
+.header-nav-link:hover {
+  background: rgba(51,51,51,0.3);
+}

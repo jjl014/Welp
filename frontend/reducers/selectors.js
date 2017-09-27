@@ -13,7 +13,7 @@ export const asArray = ({businesses}) => {
 export const selectReviewsByBusiness = (state, businessId) => {
   const reviews = asValueArray(state.entities.reviews);
   const filteredReviews = reviews.filter(review =>
-                                 review.business_id === businessId);
+                                 review.business_id === parseInt(businessId));
   return filteredReviews;
 };
 

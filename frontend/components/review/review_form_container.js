@@ -8,11 +8,11 @@ const mapStateToProps = (state, ownProps) => {
   let formType;
   let review;
   let business;
-  if (ownProps.match.url === `/reviews/${ownProps.match.params.reviewId}`) {
-    formType = 'edit';
-    review = selectReviewById(ownProps.match.params.reviewId);
-  } else {
+  if (ownProps.match.url === `/businesses/${ownProps.match.params.businessId}/reviews/new`) {
     formType = 'new';
+  } else {
+    formType = 'edit';
+    review = selectReviewById(state.entities, ownProps.match.params.reviewId);
   }
   return {
     business: selectBusinessById(state.entities, ownProps.match.params.businessId),
@@ -23,11 +23,11 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    processForm: (formType, review) => {
+    processForm: (formType, review, businessId) => {
       if (formType === 'new') {
-        return dispatch(createReview(review));
+        return dispatch(createReview(businessId, review));
       } else {
-        return dispatch(updateReview(review));
+        return dispatch(updateReview(businessId, review));
       }
     },
     fetchReview: (reviewId) => dispatch(fetchReview(reviewId)),
