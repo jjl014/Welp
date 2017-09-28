@@ -1,3 +1,4 @@
+
 #map-container {
   width: 300px;
   height: 300px;
@@ -5,4 +6,11 @@
 
 .map-wrapper {
   margin-top: 15px;
+}
+
+.biz-search-wrap .map-wrapper {
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(153,153,153,0.15);
+  height: fit-content;
+  width: fit-content;
 }

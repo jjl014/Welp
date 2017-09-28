@@ -56,3 +56,11 @@
 .header-description {
   margin-top: 18px;
 }
+
+.biz-update-map {
+  border: 1px solid #ccc;
+  padding: 5px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(153,153,153,0.15);
+  height: 100%;
+}
