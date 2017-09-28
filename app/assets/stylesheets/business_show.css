@@ -66,9 +66,10 @@
   display: flex;
 }
 
-.biz-album h1 {
+.biz-album img {
   height: 210px;
   width: 210px;
+  object-fit: cover;
   align-self: center;
   border: 1px solid #ccc;
 }

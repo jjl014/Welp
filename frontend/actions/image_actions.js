@@ -14,10 +14,12 @@ export const receiveImages = images => ({
   images
 });
 
-export const saveImage = imgUrl => dispatch => (
-  postImage(imgUrl)
-    .then((image) => dispatch(receiveImage(image)))
-);
+export const saveImage = (imgUrl, businessId) => dispatch => {
+  debugger;
+  return postImage(imgUrl, businessId)
+    .then((image) => dispatch(receiveImage(image)));
+};
+
 
 export const getImages = businessId => dispatch => (
   getImagesByBizId(businessId)

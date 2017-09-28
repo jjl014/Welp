@@ -9,8 +9,9 @@ export default class BusinessShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: {}
+      images: []
     };
+    this.postImage = this.postImage.bind(this);
   }
 
   componentDidMount() {
@@ -77,7 +78,17 @@ export default class BusinessShow extends React.Component {
     }
   }
 
+  postImage(url) {
+    this.props.saveImage(url, this.props.business.id)
+    .then((image) => {
+      let images = this.state.images;
+      images.push(image.image);
+      this.setState({images: images});
+    });
+  }
+
   render() {
+    console.log(this.state);
     const business = this.props.business;
     if (business) {
       return (
@@ -95,7 +106,7 @@ export default class BusinessShow extends React.Component {
               <div className="biz-header-right column-1-2">
                 <div className="btn-container h-box">
                   {this.renderReviewButton()}
-                  <UploadButton business={business}/>
+                  <UploadButton business={business} postImage={this.postImage}/>
                 </div>
               </div>
             </div>
