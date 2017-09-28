@@ -6,6 +6,17 @@
   margin: 0 15px;
 }
 
+.biz-rows-container input {
+  padding: 5px 9px;
+  border-radius: 3px;
+  border: solid 1px #999;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-size: 14px;
+  height: 30px;
+}
+
 .biz-form-container {
   display: flex;
   flex-direction: row;

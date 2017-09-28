@@ -46,7 +46,7 @@ export default class ReviewForm extends React.Component {
   }
 
 
-  update() {
+  updateBody() {
     return (e) => {
       this.setState({body: e.currentTarget.value});
     };
@@ -63,9 +63,14 @@ export default class ReviewForm extends React.Component {
       }
       this.props.processForm(this.props.formType, review, this.props.business.id)
                 .then(() => {
-                  debugger;
                   this.props.history.push(`/businesses/${this.props.business.id}`);
                 });
+    };
+  }
+
+  updateRating(val) {
+    return(e) => {
+      this.setState({rating: val});
     };
   }
 
@@ -108,18 +113,28 @@ export default class ReviewForm extends React.Component {
             </div>
             <div className="review-form">
               <div className="review-form-input">
-                <div className="rating-input border-layout-bottom">
-                  <div className="stars-large">
-                    Rating Input
-                    <span></span>
-                  </div>
-                  <div className="stars-large">
-                  </div>
-                  <div id="rating-tooltip"></div>
+                <div className="rating-input-wrapper border-layout-bottom">
+                  <span className="rating">
+                    <input onClick={this.updateRating(5)} type="radio" className="rating-input"
+                           id="rating-input-1-5" name="rating-input-1"/>
+                    <label htmlFor="rating-input-1-5" className="stars-large"></label>
+                    <input onClick={this.updateRating(4)} type="radio" className="rating-input"
+                           id="rating-input-1-4" name="rating-input-1"/>
+                    <label htmlFor="rating-input-1-4" className="stars-large"></label>
+                    <input onClick={this.updateRating(3)} type="radio" className="rating-input"
+                           id="rating-input-1-3" name="rating-input-1"/>
+                    <label htmlFor="rating-input-1-3" className="stars-large"></label>
+                    <input onClick={this.updateRating(2)} type="radio" className="rating-input"
+                           id="rating-input-1-2" name="rating-input-1"/>
+                    <label htmlFor="rating-input-1-2" className="stars-large"></label>
+                    <input onClick={this.updateRating(1)} type="radio" className="rating-input"
+                           id="rating-input-1-1" name="rating-input-1"/>
+                    <label htmlFor="rating-input-1-1" className="stars-large"></label>
+                  </span>
                 </div>
                 <div className="review-textarea-wrapper">
                   <textarea ref="reviewTextarea" className="review-textarea"
-                    onChange={this.update()}
+                    onChange={this.updateBody()}
                     value={this.state.body}
                     placeholder = "Your review helps others learn about great local businesses.
                                   Please don't review this business if you received a freebie

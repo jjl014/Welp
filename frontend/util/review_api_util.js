@@ -21,7 +21,6 @@ export const postReview = (businessId, review) => (
 );
 
 export const patchReview = (businessId, review) => {
-  debugger;
   return $.ajax({
     method: 'PATCH',
     url: `api/businesses/${businessId}/reviews/${review.id}`,

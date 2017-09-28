@@ -10,6 +10,17 @@
   flex-direction: column;
 }
 
+.session-container input {
+  padding: 5px 9px;
+  border-radius: 3px;
+  border: solid 1px #999;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-size: 14px;
+  height: 30px;
+}
+
 .session-header {
   background-color: #d32323;
   display: flex;

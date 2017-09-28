@@ -1,8 +1,11 @@
 import { connect } from 'react-redux';
 import Map from './map';
 
-const mapStateToProps = state => ({
-});
+const mapStateToProps = (state, ownProps) => {
+  return {
+    businesses: state.entities.businesses
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
 });

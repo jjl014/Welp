@@ -42,6 +42,10 @@
   padding-top: 20px;
 }
 
+.main-header h2 {
+  align-self: center;
+}
+
 .homepage-splash a {
   padding: 8px 11px 10px 11px;
 
@@ -95,26 +99,37 @@ nav {
   min-width: 1020px;
 }
 
-.main-inner-container .search-find-wrapper {
+.main-inner-container input {
+  padding: 5px 9px;
+  border-radius: 3px;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-size: 14px;
+  height: 30px;
+}
+
+.search-find-wrapper {
   background: #fff;
-  border-radius: 4px 0 0 4px;
+  border-radius: 4px 4px 4px 4px;
   width: 100%;
   align-items: center;
   position: relative;
 }
 
-.main-inner-container .search-near-wrapper {
+
+.search-near-wrapper {
   background: #fff;
   border-radius: 0 4px 4px 0;
   width: 100%;
   align-items: center;
 }
 
-.main-inner-container .search-find {
+.search-find {
   border: none;
 }
 
-.main-inner-container .search-near {
+.search-near {
   border: none;
 }
 

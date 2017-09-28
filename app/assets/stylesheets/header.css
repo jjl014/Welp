@@ -36,3 +36,30 @@
 .header-nav-link:hover {
   background: rgba(51,51,51,0.3);
 }
+
+.biz-header input {
+  padding: 5px 9px;
+  border-radius: 3px;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-size: 14px;
+  height: 30px;
+}
+
+.biz-header .search-find-wrapper {
+  width: 500px;
+}
+
+.biz-header .search-bar {
+  min-width: 500px;
+  margin-left: 15px;
+}
+
+.biz-header button.search-button {
+  background: #bd1f1f;
+}
+
+.biz-header button.search-button:hover {
+  background: #a71c1c;
+}

@@ -184,18 +184,43 @@ li.review-index-item {
 [placeholder]:focus::-moz-placeholder { color:transparent !important; } /* FF 19+ */
 [placeholder]:focus:-ms-input-placeholder { color:transparent !important; } /* IE 10+ */
 
+.rating-input-wrapper {
+  padding-bottom: 10px;
+}
+
 /* Rating Stars */
-.rating-stars {
+.rating {
   overflow: hidden;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
 }
 
-.rating-stars:hover {
-  background-position: 0 0;
+.rating-input {
+  float: right;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  margin: 0 0 0 -25px;
+  opacity: 0;
 }
 
-.stars-large {
-  background: transparent url("https://res.cloudinary.com/jun/image/upload/v1506362363/five_stars_wbd6ym.png") no-repeat top left;
+.stars-large,
+.rating:hover .stars-large {
+  background: url("https://res.cloudinary.com/jun/image/upload/v1506492847/yelp_stars_fhsywr.png");
+  cursor: pointer;
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 24px;
 }
+
+.rating:hover .stars-large:hover,
+.rating:hover .stars-large:hover ~ .stars-large,
+.rating-input:checked ~ .stars-large {
+    background-position: 0 344px;
+}
+
 
 .stars-medium {
   background: transparent url("https://res.cloudinary.com/jun/image/upload/q_100/v1506492847/yelp_stars_fhsywr.png") no-repeat;

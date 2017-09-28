@@ -24,7 +24,9 @@ export default class BusinessSearch extends React.Component {
             <Route exact path="/businesses" component={BusinessIndexContainer} />
             <div className="column-beta">
               <div className="map-wrapper">
-                <Route exact path="/businesses" component={MapContainer} />
+                <Route exact path="/businesses" render={(props) => (
+                    <MapContainer {...props} type="search"/>
+                  )}/>
               </div>
             </div>
           </div>

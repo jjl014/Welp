@@ -1,12 +1,17 @@
 import {connect} from 'react-redux';
 import Header from './header';
-import {businessSearch} from '../../actions/business_actions';
+import {withRouter} from 'react-router-dom';
+import {searchBusinesses} from '../../actions/business_actions';
 
-const mapDispatchToProps = dispatch => ({
-  businessSearch: () => dispatch(businessSearch())
+const mapStateToProps = (state, ownProps) => ({
+
 });
 
-export default connect(
-  undefined,
+const mapDispatchToProps = dispatch => ({
+  businessesSearch: () => dispatch(searchBusinesses())
+});
+
+export default withRouter(connect(
+  mapStateToProps,
   mapDispatchToProps
-)(Header);
+)(Header));

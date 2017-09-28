@@ -126,7 +126,7 @@ h4 {
   font-size: 14px;
 }
 
-input {
+/*input {
   padding: 5px 9px;
   border-radius: 3px;
   border: solid 1px #999;
@@ -135,7 +135,7 @@ input {
   font-weight: normal;
   font-size: 14px;
   height: 30px;
-}
+}*/
 
 select {
   height: 30px;

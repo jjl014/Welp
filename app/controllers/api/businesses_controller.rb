@@ -12,8 +12,6 @@ class Api::BusinessesController < ApplicationController
   def index
     if params[:searchKeyword]
       @businesses = Business.where("LOWER(name) LIKE ?", "%#{params[:searchKeyword]["find"].downcase}%")
-                            .or(Business.where("LOWER(address) LIKE ?", "%#{params[:searchKeyword]["near"].downcase}%"))
-                            .or(Business.where("LOWER(city) LIKE ?", "%#{params[:searchKeyword]["near"].downcase}%"))
     else
       @businesses = Business.all
     end
