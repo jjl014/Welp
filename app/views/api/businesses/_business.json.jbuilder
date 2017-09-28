@@ -10,3 +10,5 @@ json.extract! business, :id,
                         :lng,
                         :owner_id,
                         :price
+json.review_ids business.reviews.map(&:id)
+json.image_ids business.images.map(&:id)

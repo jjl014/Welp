@@ -6,6 +6,13 @@ export const selectReviewById = ({reviews}, id) => {
   return reviews[id];
 };
 
+export const selectImagesByBusiness = (state, businessId) => {
+  const images = asValueArray(state.entities.images);
+  const filteredImages = images.filter(image =>
+                                image.business_id === parseInt(businessId));
+  return filteredImages;
+};
+
 export const asArray = ({businesses}) => {
   return Object.keys(businesses).map(key => businesses[key]);
 };

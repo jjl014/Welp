@@ -29,7 +29,8 @@ export default class BusinessShow extends React.Component {
   renderReviewButton() {
     let button = "Write a Review";
     let path = "reviews/new";
-    const currentUserId = this.props.currentUser.id;
+    let currentUserId;
+    if (this.props.currentUser) currentUserId = this.props.currentUser.id;
     this.props.reviews.forEach(review => {
       if (review.user_id === currentUserId) {
         button = "Edit Review";
@@ -133,7 +134,7 @@ export default class BusinessShow extends React.Component {
                   </div>
                 </div>
               </div>
-              <BusinessAlbumContainer images={this.state.images}/>
+              <BusinessAlbumContainer business={business} newImages={this.state.images}/>
             </div>
           </div>
           <div className="biz-page-review-info h-box">

@@ -1,11 +1,10 @@
 class Api::ImagesController < ApplicationController
   def index
     if params[:business_id]
-      debugger
-      @images = Image.find(params[:business_id])
+      @images = Image.where(business_id: params[:business_id])
       render :index
     elsif params[:user_id]
-      @images = Image.find(params[:user_id])
+      @images = Image.where(user_id: params[:user_id])
     end
   end
 

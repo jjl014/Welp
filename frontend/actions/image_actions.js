@@ -15,7 +15,6 @@ export const receiveImages = images => ({
 });
 
 export const saveImage = (imgUrl, businessId) => dispatch => {
-  debugger;
   return postImage(imgUrl, businessId)
     .then((image) => dispatch(receiveImage(image)));
 };

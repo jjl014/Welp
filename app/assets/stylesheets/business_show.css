@@ -58,20 +58,32 @@
   display: flex;
 }
 
+.biz-album-wrapper {
+  height: 250px;
+  width: 600px;
+}
+
+.biz-album-wrapper .slick-slider {
+  height: 100%;
+}
 .biz-album {
   height: 100%;
 }
 
-.biz-album div {
+/*.biz-album-wrapper div {
   display: flex;
+}*/
+
+.biz-album-wrapper img {
+  object-fit: cover;
+  height: 250px;
+  width: 600px;
+  border: 1px solid #ccc;
 }
 
-.biz-album img {
-  height: 210px;
-  width: 210px;
-  object-fit: cover;
-  align-self: center;
-  border: 1px solid #ccc;
+.biz-album-wrapper .slick-next:before,
+.biz-album-wrapper .slick-prev:before {
+  color: #d32323 !important;
 }
 
 #img-2 {
