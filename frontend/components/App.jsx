@@ -5,7 +5,7 @@ import HomeContainer from './home/home_container';
 import SessionFormContainer from './sessions/session_form_container';
 import BusinessIndexContainer from './businesses/business_index_container';
 import BusinessSearch from './businesses/business_search';
-import FourZeroFour from './FourZeroFour';
+import FourZeroFour from './fourzerofour';
 
 const App = () => {
   return (
