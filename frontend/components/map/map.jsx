@@ -24,22 +24,13 @@ export default class Map extends React.Component {
     }
 
     this.map = new google.maps.Map(map, mapOptions);
+    this.MarkerManager = new MarkerManager(this.map);
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.type === 'search') {
-      Object.keys(newProps.businesess).forEach
+    if (newProps.type === 'search' && newProps.businesses) {
+      this.MarkerManager.updateMarkers(newProps.businesses);
     }
-    // if (newProps.place && (Object.keys(newProps.place).length !== 0)) {
-    //   const lat = newProps.place.geometry.location.lat;
-    //   const lng = newProps.place.geometry.location.lng;
-    //   const position = new google.maps.LatLng(lat, lng);
-    //   const marker = new google.maps.Marker({
-    //     position,
-    //     map: this.map,
-    //   });
-    //   this.map.setCenter(position);
-    // }
   }
 
   componentDidUpdate() {
