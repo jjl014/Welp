@@ -166,3 +166,17 @@
   padding-left: 30px;
   margin-right: 15px;
 }
+
+.biz-extra-info li {
+  padding-bottom: 8px;
+}
+
+.business-details-container table {
+  padding-bottom: 10px;
+}
+
+.biz-hours th {
+  text-align: left;
+  padding: 0;
+  padding-right: 12px;
+}

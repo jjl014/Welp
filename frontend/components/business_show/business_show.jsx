@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import UploadButton from './upload_button';
 import BusinessAlbumContainer from './business_album_container';
 import ReviewIndexContainer from '../review/review_index_container';
+import BusinessDetails from './business_details';
 
 export default class BusinessShow extends React.Component {
   constructor(props) {
@@ -130,8 +131,7 @@ export default class BusinessShow extends React.Component {
               <ReviewIndexContainer business={business}/>
             </div>
             <div className="biz-more-info column-1-3">
-              <h1>BUSINESS HOURS</h1>
-              <h3>AND OTHER INFO</h3>
+              <BusinessDetails />
             </div>
           </div>
         </div>
