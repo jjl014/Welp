@@ -20,7 +20,8 @@
 }
 
 .main-header-nav {
-  width: 960px;
+  width: 1020px;
+  padding: 0 15px;
   justify-content: space-between;
 }
 
@@ -62,4 +63,15 @@
 
 .biz-header button.search-button:hover {
   background: #a71c1c;
+}
+
+.biz-header .main-header a {
+  padding: 8px 11px 10px 11px;
+}
+
+.biz-header .main-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
 }

@@ -8,7 +8,7 @@ const ImagesReducer = (state = {}, action) => {
     case RECEIVE_IMAGES:
       return merge(newState, action.images);
     case RECEIVE_IMAGE:
-      return merge(newState, action.image);
+      return merge(newState, {[action.image.id]: action.image});
     default:
       return state;
   }

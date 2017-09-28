@@ -22,6 +22,7 @@ export default class SessionForm extends React.Component {
 
   handleDemoLogin() {
     return (e) => {
+      e.preventDefault();
       this.setState({username: "", password: ""});
       const username = Array.from("demo_user");
       const password = Array.from("123456");

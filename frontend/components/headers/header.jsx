@@ -13,7 +13,30 @@ export default class Header extends React.Component {
     };
   }
 
+  signoff() {
+    return (e) => {
+      this.props.signout();
+    };
+  }
+
   render() {
+    let nav;
+    if (this.props.currentUser) {
+      nav = (
+        <nav>
+          <h2 style={{color:'white'}}>{this.props.currentUser.username} </h2>
+          <a onClick={this.signoff()}>Log Out</a>
+        </nav>
+      );
+    } else {
+      nav = (
+        <nav>
+          <Link to='/login'>Log In</Link>
+          <Link to='/signup'>Sign Up</Link>
+        </nav>
+      );
+    }
+
     return (
       <div className="header-container">
         <header className="biz-header">
@@ -23,6 +46,9 @@ export default class Header extends React.Component {
             </div>
           </Link>
           <SearchContainer />
+          <div className="main-header">
+            { nav }
+          </div>
         </header>
         <div className="main-header-nav-wrapper h-box">
           <div className="main-header-nav h-box">
