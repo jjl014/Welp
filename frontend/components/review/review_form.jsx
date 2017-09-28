@@ -115,7 +115,7 @@ export default class ReviewForm extends React.Component {
               <div className="review-form-input">
                 <div className="rating-input-wrapper border-layout-bottom">
                   <span className="rating">
-                    <input onClick={this.updateRating(5)} type="radio" className="rating-input"
+                    <input onMouseOver={this.mouseOver(5)} onClick={this.updateRating(5)} type="radio" className="rating-input"
                            id="rating-input-1-5" name="rating-input-1"/>
                     <label htmlFor="rating-input-1-5" className="stars-large"></label>
                     <input onClick={this.updateRating(4)} type="radio" className="rating-input"
@@ -131,6 +131,7 @@ export default class ReviewForm extends React.Component {
                            id="rating-input-1-1" name="rating-input-1"/>
                     <label htmlFor="rating-input-1-1" className="stars-large"></label>
                   </span>
+                  <div className="tool-tip"></div>
                 </div>
                 <div className="review-textarea-wrapper">
                   <textarea ref="reviewTextarea" className="review-textarea"

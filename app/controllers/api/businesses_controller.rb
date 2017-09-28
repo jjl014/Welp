@@ -12,6 +12,8 @@ class Api::BusinessesController < ApplicationController
   def index
     if params[:searchKeyword]
       @businesses = Business.where("LOWER(name) LIKE ?", "%#{params[:searchKeyword]["find"].downcase}%")
+    elsif params[:recommend] == "getrec"
+      @businesses = Business.offset(rand(Business.count)).limit(3)
     else
       @businesses = Business.all
     end

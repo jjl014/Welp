@@ -3,7 +3,8 @@ import { RECEIVE_BUSINESS,
          RECEIVE_BUSINESSES,
          REMOVE_BUSINESS,
          UPDATE_BUSINESS,
-         RECEIVE_SEARCH_BUSINESSES } from '../actions/business_actions';
+         RECEIVE_SEARCH_BUSINESSES,
+         RECEIVE_RECOMMENDED_BUSINESSES} from '../actions/business_actions';
 
 const BusinessesReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -11,8 +12,9 @@ const BusinessesReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_SEARCH_BUSINESSES:
       return action.businesses;
+    case RECEIVE_RECOMMENDED_BUSINESSES:
     case RECEIVE_BUSINESSES:
-      return action.businesses;
+      return merge(newState, action.businesses);
     case UPDATE_BUSINESS:
     case RECEIVE_BUSINESS:
       return merge(newState, {[action.business.id]: action.business});

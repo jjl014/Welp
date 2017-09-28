@@ -25,6 +25,9 @@ export default class Map extends React.Component {
 
     this.map = new google.maps.Map(map, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
+    if (this.props.businesses && Object.keys(this.props.businesses).length > 0 ) {
+      this.MarkerManager.updateMarkers(this.props.businesses);
+    }
   }
 
   componentWillReceiveProps(newProps) {

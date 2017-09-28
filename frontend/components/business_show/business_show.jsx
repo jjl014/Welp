@@ -101,7 +101,7 @@ export default class BusinessShow extends React.Component {
             <div className="biz-info-media h-box">
               <div className="biz-info v-box">
                 <div className="biz-map-cropped">
-                  <img src={`https://maps.googleapis.com/maps/api/staticmap?scale=2&center=${business.lat},${business.lng}&zoom=15&size=286x135&markers=color:red%7C%7C${business.lat},${business.lng}&key=AIzaSyATPzJ4_cbdsC14c4fJM1-Hwf5Fgta5L_A`}/>
+                  <img src={`https://maps.googleapis.com/maps/api/staticmap?scale=2&center=${business.lat},${business.lng}&zoom=15&size=286x135&markers=color:red%7C%7C${business.lat},${business.lng}&key=${window.google_apis.google_static_maps_api_key}`}/>
                 </div>
                 <div className="biz-full-info">
                   <div className="biz-full-address h-box">

@@ -201,13 +201,14 @@ li.review-index-item {
   width: 25px;
   height: 25px;
   padding: 0;
-  margin: 0 0 0 -25px;
+  margin: 0 0 0 -23px;
   opacity: 0;
 }
 
 .stars-large,
 .rating:hover .stars-large {
-  background: url("https://res.cloudinary.com/jun/image/upload/v1506492847/yelp_stars_fhsywr.png");
+  // background: url("https://res.cloudinary.com/jun/image/upload/v1506492847/yelp_stars_fhsywr.png");
+  background: url("https://res.cloudinary.com/jun/image/upload/v1506576904/welp_stars_gursaz.png");
   cursor: pointer;
   position: relative;
   display: block;

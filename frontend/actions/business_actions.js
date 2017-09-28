@@ -5,13 +5,15 @@ export const UPDATE_BUSINESS = "UPDATE_BUSINESS";
 export const CLEAR_BUSINESS_ERRORS = "CLEAR_BUSINESS_ERRORS";
 export const RECEIVE_BUSINESS_ERRORS = "RECEIVE_BUSINESS_ERRORS";
 export const RECEIVE_SEARCH_BUSINESSES = "RECEIVE_SEARCH_BUSINESSES";
+export const RECEIVE_RECOMMENDED_BUSINESSES = "RECEIVE_RECOMMENDED_BUSINESSES";
 
 import {
   getAllBusinesses,
   getBusiness,
   postBusiness,
   patchBusiness,
-  destroyBusiness } from '../util/business_api_util';
+  destroyBusiness,
+  getRecommendedBusinesses } from '../util/business_api_util';
 
 import {filterBusinesses} from '../util/search_api_util';
 
@@ -49,6 +51,11 @@ export const receiveSearchBusinesses = (businesses) => ({
   businesses
 });
 
+export const receiveRecommendedBusinesses = (businesses) => ({
+  type: RECEIVE_RECOMMENDED_BUSINESSES,
+  businesses
+});
+
 export const fetchBusinesses = () => dispatch => (
   getAllBusinesses()
     .then((businesses) => dispatch(receiveBusinesses(businesses)))
@@ -79,4 +86,9 @@ export const deleteBusiness = (businessId) => dispatch => (
 export const searchBusinesses = (searchKeyword) => dispatch => (
   filterBusinesses(searchKeyword)
     .then((businesses) => dispatch(receiveSearchBusinesses(businesses)))
+);
+
+export const recommendedBusinesses = (recommend) => dispatch => (
+  getRecommendedBusinesses(recommend)
+    .then((businesses) => dispatch(receiveRecommendedBusinesses(businesses)))
 );

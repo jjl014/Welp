@@ -34,3 +34,11 @@ export const destroyBusiness = (id) => (
     url: `/api/businesses/${id}`
   })
 );
+
+export const getRecommendedBusinesses = (recommend) => (
+  $.ajax({
+    method: "GET",
+    url: '/api/businesses',
+    data: {recommend}
+  })
+);

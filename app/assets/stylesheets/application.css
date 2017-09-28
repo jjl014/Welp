@@ -196,3 +196,14 @@ input[type="number"] {
 .border-layout-bottom {
   border-bottom: 1px solid #e6e6e6;
 }
+
+.four-o-four {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.four-o-four a:hover {
+  text-decoration: underline;
+}
