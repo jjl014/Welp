@@ -24,7 +24,7 @@ Searching for a business returns results based on the business name. The map mar
 
 When creating a business, the map will update and show a marker at the specified address location based on the user's input. Working with Google Places API came with some difficulties since the business creation form used the same map component as the business index. Adding a type property made the distinction between the two manageable and allowed for code reuse.
 
-```
+```javascript
 // map.jsx
 
 componentDidMount() {
