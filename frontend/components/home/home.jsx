@@ -7,10 +7,6 @@ export default class Home extends React.Component {
     super(props);
   }
 
-  componenentWillMount() {
-    
-  }
-
   render() {
     return (
       <div className="home-container">

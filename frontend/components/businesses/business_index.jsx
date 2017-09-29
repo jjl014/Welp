@@ -8,7 +8,7 @@ export default class BusinessIndex extends React.Component {
   }
 
   componentDidMount() {
-    if (Object.keys(this.props.businesses).length === 0) {
+    if (Object.keys(this.props.businesses).length === 0 && !this.props.query) {
       this.props.fetchBusinesses();
     }
   }

@@ -7,6 +7,8 @@ export const RECEIVE_BUSINESS_ERRORS = "RECEIVE_BUSINESS_ERRORS";
 export const RECEIVE_SEARCH_BUSINESSES = "RECEIVE_SEARCH_BUSINESSES";
 export const RECEIVE_RECOMMENDED_BUSINESSES = "RECEIVE_RECOMMENDED_BUSINESSES";
 export const CLEAR_BUSINESSES = "CLEAR_BUSINESSES";
+export const SEARCH_BUSINESSES = "SEARCH_BUSINESSES";
+export const CLEAR_SEARCH = "CLEAR_SEARCH";
 
 import {
   getAllBusinesses,
@@ -61,6 +63,10 @@ export const receiveRecommendedBusinesses = (businesses) => ({
   businesses
 });
 
+export const clearSearch = () => ({
+  type: CLEAR_SEARCH
+})
+
 export const fetchBusinesses = () => dispatch => (
   getAllBusinesses()
     .then((businesses) => dispatch(receiveBusinesses(businesses)))
@@ -88,10 +94,14 @@ export const deleteBusiness = (businessId) => dispatch => (
     .then(() => dispatch(removeBusiness(businessId)))
 );
 
-export const searchBusinesses = (searchKeyword) => dispatch => (
-  filterBusinesses(searchKeyword)
-    .then((businesses) => dispatch(receiveSearchBusinesses(businesses)))
-);
+export const searchBusinesses = (query) => dispatch => {
+  dispatch({
+    type: SEARCH_BUSINESSES,
+    query
+  });
+  return filterBusinesses(query)
+    .then((businesses) => dispatch(receiveSearchBusinesses(businesses)));
+};
 
 export const recommendedBusinesses = (recommend) => dispatch => (
   getRecommendedBusinesses(recommend)

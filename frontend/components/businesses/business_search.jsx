@@ -18,24 +18,23 @@ export default class BusinessSearch extends React.Component {
     return (
       <div className="biz-search-container">
         <HeaderContainer />
-        <Route exact path="/businesses" component={FilterContainer} />
-        <Route exact path="/businesses" render={() => (
-          <div className="biz-search-wrap">
-            <Route exact path="/businesses" component={BusinessIndexContainer} />
-            <div className="column-beta">
-              <div className="map-wrapper">
-                <Route exact path="/businesses" render={(props) => (
-                    <MapContainer {...props} type="search"/>
-                  )}/>
+        <Switch>
+          <Route exact path="/businesses" render={() => (
+            <div className="biz-search-wrap">
+              <Route exact path="/businesses" component={BusinessIndexContainer} />
+              <div className="column-beta">
+                <div className="map-wrapper">
+                  <Route exact path="/businesses" render={(props) => (
+                      <MapContainer {...props} type="search"/>
+                    )}/>
+                </div>
               </div>
             </div>
-          </div>
-        )}/>
-        <Switch>
-          <ProtectedRoute exact path="/businesses/:businessId/reviews/new" component={ReviewFormContainer}/>
+          )}/>
+          <ProtectedRoute path="/businesses/:businessId/reviews/new" component={ReviewFormContainer}/>
           <ProtectedRoute path="/businesses/:businessId/reviews/:reviewId/edit" component={ReviewFormContainer}/>
-          <Route exact path="/businesses/:businessId/edit" component={BusinessFormContainer}/>
-          <ProtectedRoute exact path="/businesses/new" component={BusinessFormContainer} />
+          <Route path="/businesses/:businessId/edit" component={BusinessFormContainer}/>
+          <ProtectedRoute path="/businesses/new" component={BusinessFormContainer} />
           <Route path="/businesses/:businessId" component={BusinessShowContainer}/>
         </Switch>
       </div>
