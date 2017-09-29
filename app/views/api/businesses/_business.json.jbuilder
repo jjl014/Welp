@@ -11,4 +11,6 @@ json.extract! business, :id,
                         :owner_id,
                         :price
 json.review_ids business.reviews.map(&:id)
-json.image_ids business.images.map(&:id)
+json.img_preview business.images.first.img_url
+json.num_reviews business.reviews.count
+json.avg_rating (business.reviews.sum(:rating)/business.reviews.count)

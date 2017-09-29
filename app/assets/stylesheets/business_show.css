@@ -60,35 +60,30 @@
 
 .biz-album-wrapper {
   height: 250px;
-  width: 600px;
+  width: 400px;
 }
 
-.biz-album-wrapper .slick-slider {
-  height: 100%;
+.biz-album-super-container {
+  width: 60%;
+  justify-content: center;
 }
+
+/*.biz-album-wrapper .slick-slider {
+  height: 100%;
+}*/
 .biz-album {
   height: 100%;
 }
 
-/*.biz-album-wrapper div {
-  display: flex;
-}*/
-
 .biz-album-wrapper img {
-  object-fit: cover;
+  object-fit: contain;
   height: 250px;
-  width: 600px;
-  border: 1px solid #ccc;
+  width: 400px;
 }
 
 .biz-album-wrapper .slick-next:before,
 .biz-album-wrapper .slick-prev:before {
   color: #d32323 !important;
-}
-
-#img-2 {
-  height: 235px;
-  width: 236px;
 }
 
 .biz-map-cropped {

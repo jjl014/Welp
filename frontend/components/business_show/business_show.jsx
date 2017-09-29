@@ -15,6 +15,7 @@ export default class BusinessShow extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     if (!this.props.business) {
       this.props.fetchBusiness(this.props.match.params.businessId);
     }

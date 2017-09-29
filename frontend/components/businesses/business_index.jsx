@@ -9,29 +9,8 @@ export default class BusinessIndex extends React.Component {
 
   componentDidMount() {
     if (Object.keys(this.props.businesses).length === 0) {
-      this.props.fetchBusinesses()
-        .then(() => {
-          document.querySelectorAll('p').forEach((el) => {
-            el.innerText = this.truncateText('p', 170);
-          });
-      });
+      this.props.fetchBusinesses();
     }
-  }
-
-  componentWillReceiveProps(newProps) {
-    document.querySelectorAll('p').forEach((el) => {
-      el.innerText = this.truncateText('p', 170);
-    });
-  }
-
-  truncateText(selector, maxLength) {
-      var element = document.querySelector(selector),
-          truncated = element.innerText;
-
-      if (truncated.length > maxLength) {
-          truncated = truncated.substr(0,maxLength) + '...';
-      }
-      return truncated;
   }
 
   render() {

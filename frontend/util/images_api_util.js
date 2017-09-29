@@ -1,5 +1,4 @@
 export const postImage = (url, businessId) => {
-  debugger;
   const image = {img_url : url};
   return $.ajax({
     method: 'POST',

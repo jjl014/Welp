@@ -39,9 +39,11 @@
 }
 
 .biz-media {
+  object-fit: cover;
   height: 90px;
   width: 90px;
   margin-right: 12px;
+  border-radius: 4px;
 }
 
 .biz-name {
@@ -53,7 +55,7 @@
 }
 
 .biz-review-preview {
-
+  align-items: center;
 }
 
 
@@ -78,7 +80,13 @@
   width: 150px;
 }
 
-/* temp */
 .biz-btn a {
   color: white;
+}
+
+.biz-review-preview p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 15px;
+  white-space: nowrap;
 }

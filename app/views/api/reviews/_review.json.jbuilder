@@ -3,4 +3,5 @@ json.created_at review.created_at.strftime('%-m/%-d/%Y')
 json.set! "user" do
   json.username review.user.username
   json.num_reviews review.user.reviews.count
+  json.img_url review.user.img_url
 end
