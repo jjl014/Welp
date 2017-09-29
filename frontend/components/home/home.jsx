@@ -7,10 +7,6 @@ export default class Home extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
-    this.props.recommendedBusinesses();
-  }
-
   render() {
     return (
       <div className="home-container">

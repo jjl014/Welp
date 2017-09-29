@@ -11,8 +11,8 @@ const BusinessesReducer = (state = {}, action) => {
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_SEARCH_BUSINESSES:
-      return action.businesses;
     case RECEIVE_RECOMMENDED_BUSINESSES:
+      return action.businesses;
     case RECEIVE_BUSINESSES:
       return merge(newState, action.businesses);
     case UPDATE_BUSINESS:

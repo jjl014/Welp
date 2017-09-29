@@ -5,7 +5,7 @@ export default class Search extends React.Component {
     super(props);
     this.state = {
       find: "",
-      near: ""
+      near: "San Francisco"
     };
   }
 
@@ -30,7 +30,7 @@ export default class Search extends React.Component {
       <div className="search-bar h-box">
         <form className="search-find-wrapper h-box">
           <label>Find</label>
-          <input onChange={this.update("find")} className="search-find" type='text' value={this.state.find}></input>
+          <input onChange={this.update("find")} className="search-find" placeholder="Sushi, Ramen, Taco" type='text' value={this.state.find}></input>
           <button onClick={this.handleSearch()} className="fa fa-lg fa-search search-button" aria-hidden="true">
           </button>
         </form>
@@ -39,8 +39,5 @@ export default class Search extends React.Component {
   }
 }
 
-// <div className="search-near-wrapper h-box">
-// <div className="line-break"></div>
-//   <label>Near</label>
-//   <input onChange={this.update("near")} className="search-near" type='text' value={this.state.near}></input>
-// </div>
+// <label>Near</label>
+// <input onChange={this.update("near")} className="search-near" placeholder="San Francisco" type='text' value={this.state.near}></input>

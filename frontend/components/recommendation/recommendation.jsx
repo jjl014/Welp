@@ -6,6 +6,10 @@ export default class Recommendation extends React.Component {
     super(props);
   }
 
+  componentWillMount() {
+      this.props.recommendedBusinesses();
+  }
+
   render() {
     if (this.props.businesses.length > 2) {
       const businesses = this.props.businesses.slice(0,3).map((business,i) => {

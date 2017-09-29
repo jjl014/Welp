@@ -24,7 +24,10 @@ export default class Greeting extends React.Component {
     if (this.props.currentUser) {
       nav = (
         <nav>
-          <h2 style={{color:'white'}}>{this.props.currentUser.username} </h2>
+          <div className="user-media-wrapper v-box">
+            <img className="user-avatar" src={`${this.props.currentUser.img_url}`}/>
+            <h4 style={{color:'white'}}>{this.props.currentUser.username} </h4>
+          </div>
           <a onClick={this.signoff()}>Log Out</a>
         </nav>
       );
