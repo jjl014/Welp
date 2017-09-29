@@ -1,24 +1,65 @@
-# README
+# Welp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Welp live][heroku]
 
-Things you may want to cover:
+Welp is a Yelp inspired clone where users are able to signup and login to create businesses as well as leave reviews on existing ones. Welp utilizes React/Redux for the front end and Rails/Postgresql for the back end. Google Maps API and Google Static Maps API were used to get latitude and longitude information as well as address components based on user input. React-Slick was used to display the image album for the business show pages. 
 
-* Ruby version
+## Features
 
-* System dependencies
+### Home
 
-* Configuration
+![Home Page][home]
 
-* Database creation
+The home page features a search bar that allows users to search by business name. It also has featured businesses that changes everytime you visit the home page.
 
-* Database initialization
+### Business Search
 
-* How to run the test suite
+![Business Search][search]
 
-* Services (job queues, cache servers, search engines, etc.)
+Searching for a business returns results based on the business name. The map markers are also updated to reflect the current businesses in the index.
 
-* Deployment instructions
+### Creating a Business
 
-* ...
+![Business Create][business-create]
+
+When creating a business, the map will update and show a marker at the specified address location based on the user's input.
+
+### Editing a Business
+
+![Business Edit][business-edit]
+
+Users are allowed to edit the business information, but only the owners of a business are allowed to delete a business.
+
+### Business Index
+
+![Business Index][business-index]
+
+The business index shows a list of all the restuarants along with their map markers on the google maps.
+
+### Business Page
+
+![Business Show Page][business-show]
+
+On the business page, users can see all the information about the business. Users can read the various reviews made by others and write their own. If they have a photo they want to add to the business image album, they can simply click on "Add Photo" button and upload their photo.
+
+### Review Form
+
+![Review Form][review-form]
+
+On the review form, users can write their own unique review. Users can also see the many other reviews made by others along the right side of the page.
+
+## Future Directions
+
+* Search by food and location
+* Update business index when the map is moved
+* Allow users to bookmark restuarants
+* User profile page where users can view/edit their reviews
+
+[heroku]: https://welp-i-guess.herokuapp.com/
+[home]: https://github.com/jjl014/Welp/blob/master/app/assets/images/welp_home.png
+[business-create]: https://github.com/jjl014/Welp/blob/master/app/assets/images/welp_business_create.png
+[business-edit]: https://github.com/jjl014/Welp/blob/master/app/assets/images/welp_business_edit.png
+[business-index]: https://github.com/jjl014/Welp/blob/master/app/assets/images/welp_business_index.png
+[business-show]: https://github.com/jjl014/Welp/blob/master/app/assets/images/welp_business_show.png
+[review-form]: https://github.com/jjl014/Welp/blob/master/app/assets/images/welp_review_form.png
+[search]: https://github.com/jjl014/Welp/blob/master/app/assets/images/welp_search.png
