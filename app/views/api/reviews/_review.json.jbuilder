@@ -8,7 +8,3 @@ end
 json.set! "business" do
   json.partial! '/api/businesses/business', business: review.business
 end
-
-# json.set! business do
-#   json.partial! '/api/businesses/business', business: business
-# end
