@@ -2,23 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const BusinessIndexItem = ({business}) => {
-  let businessPrice;
-  switch(business.price) {
-    case 1:
-      businessPrice = "$";
-      break;
-    case 2:
-      businessPrice = "$$";
-      break;
-    case 3:
-      businessPrice = "$$$";
-      break;
-    case 4:
-      businessPrice = "$$$$";
-      break;
-  }
-  const ar = business.avg_rating;
 
+  let businessPrice;
+  let price = business.price;
+  if (price === 4) {
+    businessPrice = "$$$$";
+  } else if (price === 3) {
+    businessPrice = "$$$";
+  } else if (price === 2) {
+    businessPrice = "$$";
+  } else {
+    businessPrice = "$";
+  }
+
+  const ar = business.avg_rating;
   let avgRating;
   if (ar < 1.5) {
     avgRating = <div className="stars-med stars-med-1"></div>;

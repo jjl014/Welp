@@ -84,19 +84,15 @@ export default class ReviewForm extends React.Component {
     }
     if (business) {
       let businessPrice;
-      switch(business.price) {
-        case 1:
-          businessPrice = "$";
-          break;
-        case 2:
-          businessPrice = "$$";
-          break;
-        case 3:
-          businessPrice = "$$$";
-          break;
-        case 4:
-          businessPrice = "$$$$";
-          break;
+      let price = business.price;
+      if (price === 4) {
+        businessPrice = "$$$$";
+      } else if (price === 3) {
+        businessPrice = "$$$";
+      } else if (price === 2) {
+        businessPrice = "$$";
+      } else {
+        businessPrice = "$";
       }
       return (
         <div className="review-form-container h-box">
