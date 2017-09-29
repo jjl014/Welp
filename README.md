@@ -98,7 +98,7 @@ On the review form, users can write their own unique review. Users can also see 
 * User profile page where users can view/edit their reviews as well as setting a profile picture
 
 [heroku]: https://welp-i-guess.herokuapp.com/
-[home]: https://github.com/jjl014/Welp/blob/master/app/assets/images/welp_home.png
+[home]: https://github.com/jjl014/Welp/blob/master/app/assets/images/welp_home_page.png
 [business-create]: https://github.com/jjl014/Welp/blob/master/app/assets/images/welp_business_create.png
 [business-edit]: https://github.com/jjl014/Welp/blob/master/app/assets/images/welp_business_edit.png
 [business-index]: https://github.com/jjl014/Welp/blob/master/app/assets/images/welp_business_index.png
