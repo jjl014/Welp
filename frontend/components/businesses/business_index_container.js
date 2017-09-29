@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import BusinessIndex from './business_index';
-import {fetchBusinesses} from '../../actions/business_actions';
+import {fetchBusinesses, clearBusinesses} from '../../actions/business_actions';
 
 const mapStateToProps = state => ({
   businesses: state.entities.businesses
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchBusinesses: () => dispatch(fetchBusinesses())
+  fetchBusinesses: () => dispatch(fetchBusinesses()),
+  clearBusinesses: () => dispatch(clearBusinesses())
 });
 
 export default connect(

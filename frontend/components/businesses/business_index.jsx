@@ -19,15 +19,22 @@ export default class BusinessIndex extends React.Component {
       return <BusinessIndexItem key={`business-item-${businessKey}`}
                                 business={businesses[businessKey]}/>;
     });
-
-    return (
-      <div className="biz-index-container column-alpha">
-        <div className="biz-index">
-          <ul className="biz-index-ul">
-            {businessList}
-          </ul>
+    if (businessList.length === 0) {
+      return (
+        <div className="no-match">
+          <h2>Sorry, nothing matched your search!</h2>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="biz-index-container column-alpha">
+          <div className="biz-index">
+            <ul className="biz-index-ul">
+              {businessList}
+            </ul>
+          </div>
+        </div>
+      );
+    }
   }
 }

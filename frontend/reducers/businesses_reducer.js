@@ -4,7 +4,8 @@ import { RECEIVE_BUSINESS,
          REMOVE_BUSINESS,
          UPDATE_BUSINESS,
          RECEIVE_SEARCH_BUSINESSES,
-         RECEIVE_RECOMMENDED_BUSINESSES} from '../actions/business_actions';
+         RECEIVE_RECOMMENDED_BUSINESSES,
+         CLEAR_BUSINESSES} from '../actions/business_actions';
 
 const BusinessesReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -21,6 +22,8 @@ const BusinessesReducer = (state = {}, action) => {
     case REMOVE_BUSINESS:
       delete newState[action.businessId];
       return newState;
+    case CLEAR_BUSINESSES:
+      return {};
     default:
       return state;
   }

@@ -6,6 +6,7 @@ export const CLEAR_BUSINESS_ERRORS = "CLEAR_BUSINESS_ERRORS";
 export const RECEIVE_BUSINESS_ERRORS = "RECEIVE_BUSINESS_ERRORS";
 export const RECEIVE_SEARCH_BUSINESSES = "RECEIVE_SEARCH_BUSINESSES";
 export const RECEIVE_RECOMMENDED_BUSINESSES = "RECEIVE_RECOMMENDED_BUSINESSES";
+export const CLEAR_BUSINESSES = "CLEAR_BUSINESSES";
 
 import {
   getAllBusinesses,
@@ -16,6 +17,10 @@ import {
   getRecommendedBusinesses } from '../util/business_api_util';
 
 import {filterBusinesses} from '../util/search_api_util';
+
+export const clearBusinesses = () => ({
+  type: CLEAR_BUSINESSES
+});
 
 export const receiveBusinesses = (businesses) => ({
   type: RECEIVE_BUSINESSES,

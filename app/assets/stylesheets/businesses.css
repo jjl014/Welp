@@ -100,3 +100,8 @@
   height: 20px;
   white-space: nowrap;
 }
+
+.no-match {
+  width: 680px;
+  padding: 50px;
+}

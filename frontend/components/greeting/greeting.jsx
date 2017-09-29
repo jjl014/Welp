@@ -15,8 +15,12 @@ export default class Greeting extends React.Component {
 
   handleClick() {
     return (e) => {
-      this.props.searchBusinesses();
+      this.props.fetchBusinesses();
     };
+  }
+
+  componentDidMount() {
+    this.props.recommendedBusinesses();
   }
 
   render() {

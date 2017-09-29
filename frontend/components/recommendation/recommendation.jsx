@@ -6,8 +6,8 @@ export default class Recommendation extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
-      this.props.recommendedBusinesses();
+  componentDidMount() {
+    this.props.recommendedBusinesses();
   }
 
   render() {
