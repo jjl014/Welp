@@ -208,7 +208,7 @@ li.review-index-item {
 .stars-large,
 .rating:hover .stars-large {
   // background: url("https://res.cloudinary.com/jun/image/upload/v1506492847/yelp_stars_fhsywr.png");
-  background: url("https://res.cloudinary.com/jun/image/upload/v1506576904/welp_stars_gursaz.png");
+  background: url("https://res.cloudinary.com/jun/image/upload/v1506653249/welp_stars-light_ppoakw.png");
   cursor: pointer;
   position: relative;
   display: block;
@@ -223,16 +223,70 @@ li.review-index-item {
 }
 
 
-.stars-medium {
-  background: transparent url("https://res.cloudinary.com/jun/image/upload/q_100/v1506492847/yelp_stars_fhsywr.png") no-repeat;
+.stars-med {
+  background: transparent url("https://res.cloudinary.com/jun/image/upload/v1506653249/welp_stars-light_ppoakw.png") no-repeat;
   background-position: 0px -240px;
   left: 0;
   width: 102px;
   height: 180px;
 }
 
+.stars-med-1 {
+  width: 102px;
+  height: 18px;
+  background-position: 0px -258px;
+}
+
+.stars-med-1-5 {
+  width: 102px;
+  height: 18px;
+  background-position: 0px -276px;
+}
+
+.stars-med-2 {
+  width: 102px;
+  height: 18px;
+  background-position: 0px -294px;
+}
+
+.stars-med-2-5 {
+  width: 102px;
+  height: 18px;
+  background-position: 0px -312px;
+}
+
+.stars-med-3 {
+  width: 102px;
+  height: 18px;
+  background-position: 0px -330px;
+}
+
+.stars-med-3-5 {
+  width: 102px;
+  height: 18px;
+  background-position: 0px -348px;
+}
+
+.stars-med-4 {
+  width: 102px;
+  height: 18px;
+  background-position: 0px -366px;
+}
+
+.stars-med-4-5 {
+  width: 102px;
+  height: 18px;
+  background-position: 0px -384px;
+}
+
+.stars-med-5 {
+  width: 102px;
+  height: 18px;
+  background-position: 0px -402px;
+}
+
 .stars-small {
-  background: transparent url("https://res.cloudinary.com/jun/image/upload/q_100/v1506492847/yelp_stars_fhsywr.png") no-repeat;
+  background: transparent url("https://res.cloudinary.com/jun/image/upload/v1506653249/welp_stars-light_ppoakw.png") no-repeat;
   left: 0;
   background-position: 0px -420px;
   width: 82px;

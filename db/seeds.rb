@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+
 demo = User.create(username: "demo_user", password:"123456", email: "demo@demo.com", zipcode: 94134)
 u1 = User.create(username: "Andres", password:"123456", email: "andres@demo.com", zipcode: 94134)
 u2 = User.create(username: "Jerry", password:"123456", email: "jerry@demo.com", zipcode: 94134)
@@ -25,116 +27,73 @@ u16 = User.create(username: "Tony", password:"123456", email: "tony@demo.com", z
 u17 = User.create(username: "Jesus", password:"123456", email: "jesus@demo.com", zipcode: 94134)
 u18 = User.create(username: "Jimmy", password:"123456", email: "jimmy@demo.com", zipcode: 94134)
 
+Business.destroy_all
 
 b1 = Business.create(name: "Box Kitchen", address: "431 Natoma St", city: "San Francisco",
-state: "CA", zipcode: 94103, lat: 37.7809504, lng: -122.4067438, phone: "(415) 580-7170", url: "www.pourguys.com", owner_id: demo.id)
+state: "CA", zipcode: 94103, lat: 37.7809504, lng: -122.4067438, phone: "(415) 580-7170",
+url: "www.pourguys.com", owner_id: demo.id, price: 1)
 b2 = Business.create(name: "Zen Izakaya", address: "764 Harrison St", city: "San Francisco",
-state: "CA", zipcode:94107, lat: 37.7815308, lng: -122.3990101, phone: "(415) 222-9988", url: "www.zenizakayasf.com", owner_id: demo.id)
+state: "CA", zipcode:94107, lat: 37.7815308, lng: -122.3990101, phone: "(415) 222-9988",
+url: "www.zenizakayasf.com", owner_id: demo.id, price: 3)
 b3 = Business.create(name: "Tacorea", address: "809 Bush St", city: "San Francisco",
-state: "CA", zipcode: 94108, lat: 37.789745, lng: -122.4105791, phone: "(415) 885-1325", url: "www.tacoreasf.com", owner_id: demo.id)
+state: "CA", zipcode: 94108, lat: 37.789745, lng: -122.4105791, phone: "(415) 885-1325",
+url: "www.tacoreasf.com", owner_id: demo.id, price: 1)
 b4 = Business.create(name: "Marufuku Ramen", address: "1581 Webster St", city: "San Francisco",
-state: "CA", zipcode: 94115, lat: 37.7850458, lng: -122.4320932, phone: "(415) 872-9786", url: "www.marufukuramen.com", owner_id: demo.id)
+state: "CA", zipcode: 94115, lat: 37.7850458, lng: -122.4320932, phone: "(415) 872-9786",
+url: "www.marufukuramen.com", owner_id: demo.id, price: 2)
 b5 = Business.create(name: "Kuma Sushi + Sake", address: "1040 Polk St", city: "San Francisco",
-state: "CA", zipcode: 94109, lat: 37.7867162, lng: -122.4196757, phone: "(415) 962-7400", url: "www.kumasf.com", owner_id: demo.id)
+state: "CA", zipcode: 94109, lat: 37.7867162, lng: -122.4196757, phone: "(415) 962-7400",
+url: "www.kumasf.com", owner_id: demo.id, price: 2)
 b6 = Business.create(name: "Hogwash", address: "582 Sutter St", city: "San Francisco",
-state: "CA", zipcode: 94102, lat: 37.7891754, lng: -122.4099292, phone: "(415) 361-5500", url: "www.hogwashsf.com", owner_id: demo.id)
+state: "CA", zipcode: 94102, lat: 37.7891754, lng: -122.4099292, phone: "(415) 361-5500",
+url: "www.hogwashsf.com", owner_id: demo.id, price: 1)
 b7 = Business.create(name: "Nojo Ramen Tavern", address: "231 Franklin St", city: "San Francisco",
-state: "CA", zipcode: 94102, lat: 37.7767014, lng: -122.4214817, phone: "(415) 896-4587", url: "www.nojosf.com", owner_id: demo.id)
+state: "CA", zipcode: 94102, lat: 37.7767014, lng: -122.4214817, phone: "(415) 896-4587",
+url: "www.nojosf.com", owner_id: demo.id, price: 2)
 b8 = Business.create(name: "The Pork Exchange", address: "807 Ellis St", city: "San Francisco",
-state: "CA", zipcode: 94109, lat: 37.78380600000001, lng: -122.4196992, phone: "(415) 932-6931", owner_id: demo.id)
+state: "CA", zipcode: 94109, lat: 37.78380600000001, lng: -122.4196992, phone: "(415) 932-6931",
+owner_id: demo.id, price: 1)
 b9 = Business.create(name: "Nopa", address: "560 Divisadero St", city: "San Francisco",
-state: "CA", zipcode: 94117, lat: 37.7749029, lng: -122.4374737, phone: "(415) 864-8643", url: "www.nopasf.com", owner_id: demo.id)
+state: "CA", zipcode: 94117, lat: 37.7749029, lng: -122.4374737, phone: "(415) 864-8643",
+url: "www.nopasf.com", owner_id: demo.id, price: 2)
 b10 = Business.create(name: "a Mano", address: "450 Hayes St", city: "San Francisco",
-state: "CA", zipcode: 94102, lat: 37.776913, lng: -122.4239543, phone: "(415) 506-7401", url: "www.amanosf.com", owner_id: demo.id)
+state: "CA", zipcode: 94102, lat: 37.776913, lng: -122.4239543, phone: "(415) 506-7401",
+url: "www.amanosf.com", owner_id: demo.id, price: 3)
 
-Review.create(business_id: b1.id, user_id: demo.id, body: "Good food, would come again.", rating: 4)
-Review.create(business_id: b1.id, user_id: u1.id, body: "It's not the best, but it's good.", rating: 3)
-Review.create(business_id: b1.id, user_id: u2.id, body: "It's not the great to be honest.", rating: 2)
-Review.create(business_id: b1.id, user_id: u3.id, body: "Best food I've eaten, ever.", rating: 5)
-Review.create(business_id: b1.id, user_id: u4.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b1.id, user_id: u5.id, body: "It's not the great to be honest.", rating: 2)
-Review.create(business_id: b1.id, user_id: u6.id, body: "Best food I've eaten, ever.", rating: 5)
-Review.create(business_id: b1.id, user_id: u7.id, body: "It was better than I expected.", rating: 4)
+Review.destroy_all
 
-Review.create(business_id: b2.id, user_id: u1.id, body: "It's not the best, but it's good.", rating: 3)
-Review.create(business_id: b2.id, user_id: u2.id, body: "It's not the great to be honest.", rating: 2)
-Review.create(business_id: b2.id, user_id: u3.id, body: "Best food I've eaten, ever.", rating: 5)
-Review.create(business_id: b2.id, user_id: u4.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b2.id, user_id: u5.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-Review.create(business_id: b2.id, user_id: u9.id, body: "Waiting staff could be better, but food was great!", rating: 4)
 
-Review.create(business_id: b3.id, user_id: u1.id, body: "It's not the best, but it's good.", rating: 3)
-Review.create(business_id: b3.id, user_id: u2.id, body: "It's not the great to be honest.", rating: 2)
-Review.create(business_id: b3.id, user_id: u3.id, body: "Best food I've eaten, ever.", rating: 5)
-Review.create(business_id: b3.id, user_id: u4.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b3.id, user_id: u5.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-Review.create(business_id: b3.id, user_id: u10.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b3.id, user_id: u8.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-Review.create(business_id: b3.id, user_id: u9.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b3.id, user_id: u7.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-Review.create(business_id: b3.id, user_id: u6.id, body: "It was better than I expected.", rating: 4)
+user_ids = (User.first.id..User.last.id).to_a
+business_ids = (Business.first.id..Business.last.id).to_a
 
-Review.create(business_id: b4.id, user_id: u1.id, body: "It's not the best, but it's good.", rating: 3)
-Review.create(business_id: b4.id, user_id: u2.id, body: "It's not the great to be honest.", rating: 2)
-Review.create(business_id: b4.id, user_id: u3.id, body: "Best food I've eaten, ever.", rating: 5)
-Review.create(business_id: b4.id, user_id: u4.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b4.id, user_id: u5.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-Review.create(business_id: b4.id, user_id: u3.id, body: "Best food I've eaten, ever.", rating: 5)
-Review.create(business_id: b4.id, user_id: u18.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b4.id, user_id: u15.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-Review.create(business_id: b4.id, user_id: u12.id, body: "Best food I've eaten, ever.", rating: 5)
-Review.create(business_id: b4.id, user_id: u13.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b4.id, user_id: u8.id, body: "Waiting staff could be better, but food was great!", rating: 4)
+200.times do
+  random = rand(20)
+  case random
+  when 1..3
+    rating = 1
+    body = "The food was terrible! I'm never coming here ever again!"
+  when 4..6
+    rating = 2
+    body = "This place could definitely use a bit of work. I wouldn't recommend it to my friends."
+  when 7..9
+    rating = 3
+    body = "I'm not sure whether I like it or not. The food was mediocre, but the service was good."
+  when 10..12
+    rating = 4
+    body = "The food and service was good. I'm going to bring my friends next time."
+  else
+    rating = 5
+    body = "Everything was great! The food, the service, the ambience! I highly recommended this place! I'm going to bring my whole family next time."
+  end
+  Review.create(
+    user_id: user_ids.sample,
+    business_id: business_ids.sample,
+    rating: rating,
+    body: body,
+  )
+end
 
-Review.create(business_id: b5.id, user_id: u6.id, body: "It's not the best, but it's good.", rating: 3)
-Review.create(business_id: b5.id, user_id: u7.id, body: "It's not the great to be honest.", rating: 2)
-Review.create(business_id: b5.id, user_id: u3.id, body: "Best food I've eaten, ever.", rating: 5)
-Review.create(business_id: b5.id, user_id: u4.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b5.id, user_id: u5.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-
-Review.create(business_id: b6.id, user_id: u1.id, body: "It's not the best, but it's good.", rating: 3)
-Review.create(business_id: b6.id, user_id: u8.id, body: "It's not the great to be honest.", rating: 2)
-Review.create(business_id: b6.id, user_id: u9.id, body: "Best food I've eaten, ever.", rating: 5)
-Review.create(business_id: b6.id, user_id: u4.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b6.id, user_id: u5.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-Review.create(business_id: b6.id, user_id: u13.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b6.id, user_id: u15.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-
-Review.create(business_id: b7.id, user_id: u10.id, body: "It's not the best, but it's good.", rating: 3)
-Review.create(business_id: b7.id, user_id: u4.id, body: "It's not the great to be honest.", rating: 2)
-Review.create(business_id: b7.id, user_id: u2.id, body: "Best food I've eaten, ever.", rating: 5)
-Review.create(business_id: b7.id, user_id: u3.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b7.id, user_id: u5.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-Review.create(business_id: b7.id, user_id: u14.id, body: "Best food I've eaten, ever.", rating: 5)
-Review.create(business_id: b7.id, user_id: u16.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b7.id, user_id: u17.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-
-Review.create(business_id: b8.id, user_id: u4.id, body: "It's not the best, but it's good.", rating: 3)
-Review.create(business_id: b8.id, user_id: u2.id, body: "It's not the great to be honest.", rating: 2)
-Review.create(business_id: b8.id, user_id: u10.id, body: "Best food I've eaten, ever.", rating: 5)
-Review.create(business_id: b8.id, user_id: u9.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b8.id, user_id: u5.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-Review.create(business_id: b8.id, user_id: u13.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-
-Review.create(business_id: b9.id, user_id: u8.id, body: "It's not the best, but it's good.", rating: 3)
-Review.create(business_id: b9.id, user_id: u7.id, body: "It's not the great to be honest.", rating: 2)
-Review.create(business_id: b9.id, user_id: u3.id, body: "Best food I've eaten, ever.", rating: 5)
-Review.create(business_id: b9.id, user_id: u6.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b9.id, user_id: u5.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-Review.create(business_id: b9.id, user_id: u12.id, body: "It's not the great to be honest.", rating: 2)
-Review.create(business_id: b9.id, user_id: u14.id, body: "Best food I've eaten, ever.", rating: 5)
-Review.create(business_id: b9.id, user_id: u13.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b9.id, user_id: u18.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-
-Review.create(business_id: b10.id, user_id: u3.id, body: "It's not the best, but it's good.", rating: 3)
-Review.create(business_id: b10.id, user_id: u4.id, body: "It's not the great to be honest.", rating: 2)
-Review.create(business_id: b10.id, user_id: u7.id, body: "Best food I've eaten, ever.", rating: 5)
-Review.create(business_id: b10.id, user_id: u1.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b10.id, user_id: u2.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-Review.create(business_id: b10.id, user_id: u11.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b10.id, user_id: u12.id, body: "Waiting staff could be better, but food was great!", rating: 4)
-Review.create(business_id: b10.id, user_id: u9.id, body: "It was better than I expected.", rating: 4)
-Review.create(business_id: b10.id, user_id: u10.id, body: "Waiting staff could be better, but food was great!", rating: 4)
+Image.destroy_all
 
 Image.create(business_id: b10.id, img_url: "https://res.cloudinary.com/jun/image/upload/v1506642794/amano_1_y4fdmq.jpg")
 Image.create(business_id: b10.id, img_url: "https://res.cloudinary.com/jun/image/upload/v1506642794/amano_2_bkbzac.jpg")

@@ -218,7 +218,13 @@ export default class BusinessForm extends React.Component {
               <label htmlFor="biz-url">Web Address</label>
               <input onChange={this.update("url")} id="biz-url" placeholder="www.welp.com" type="text" value={this.state.business.url || ""}></input>
               <label htmlFor="biz-price">Price</label>
-              <input onChange={this.update("price")} id="biz-price" placeholder="$" type="text" value={this.state.business.price || ""}></input>
+              <select id="biz-price" onChange={this.update("price")} value={this.state.business.price}>
+                <option value="1">$ - Inexpensive</option>
+                <option value="2">$$ - Moderate</option>
+                <option value="3">$$$ - Pricey</option>
+                <option value="4">$$$$ - Ultra High-End</option>
+              </select>
+
               <button className="btn-primary biz-btn" onClick={this.handleSubmit}>{button}</button>
             </div>
             <div className="biz-update-map">

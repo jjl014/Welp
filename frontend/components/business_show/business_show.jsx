@@ -93,6 +93,21 @@ export default class BusinessShow extends React.Component {
     console.log(this.state);
     const business = this.props.business;
     if (business) {
+      let businessPrice;
+      switch(business.price) {
+        case 1:
+          businessPrice = "$";
+          break;
+        case 2:
+          businessPrice = "$$";
+          break;
+        case 3:
+          businessPrice = "$$$";
+          break;
+        case 4:
+          businessPrice = "$$$$";
+          break;
+      }
       return (
         <div className="biz-show-container max-w-1020 center">
           <div className="top-shelf"></div>
@@ -103,7 +118,7 @@ export default class BusinessShow extends React.Component {
                 <div className="biz-header-rating">
                   <img src="https://res.cloudinary.com/jun/image/upload/v1506362363/five_stars_wbd6ym.png"/>
                 </div>
-                <div className="biz-header-price-category"><h3>{business.price}</h3></div>
+                <div className="biz-header-price-category"><h3>{businessPrice}</h3></div>
               </div>
               <div className="biz-header-right column-1-2">
                 <div className="btn-container h-box">
