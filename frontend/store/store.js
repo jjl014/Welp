@@ -7,7 +7,6 @@ const middlewares = [thunk];
 if (process.env.NODE_ENV !== 'production') {
   // must use 'require' (import only allowed at top of file)
   const { logger } = require('redux-logger');
-  const { composeWithDevTools } = require('redux-devtools-extension');
   middlewares.push(logger);
 }
 
