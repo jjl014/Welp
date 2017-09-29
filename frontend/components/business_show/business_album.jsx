@@ -24,7 +24,7 @@ export default class BusinessAlbum extends React.Component {
                 slidesToScroll: 1,
                 accessibility: true}
               }>
-              {images}
+              {images.length > 0 ? images : <div className="biz-image-wrapper"><img src="https://res.cloudinary.com/jun/image/upload/v1506625230/cityscape_qfftoj.png"/></div>}
             </Slider>
           </div>
       </div>

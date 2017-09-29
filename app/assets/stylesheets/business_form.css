@@ -65,3 +65,15 @@
   box-shadow: 0 2px 4px rgba(153,153,153,0.15);
   height: 100%;
 }
+
+.biz-form-btns {
+  align-items: center;
+}
+
+.biz-form-btns button {
+  margin-right: 10px;
+}
+
+.biz-form-btns a:hover {
+  text-decoration: underline;
+}

@@ -34,12 +34,16 @@ export const fetchReview = (reviewId) => dispatch => (
 
 export const createReview = (businessId, review) => dispatch => (
   postReview(businessId, review)
-    .then((newReview) => dispatch(receiveReview(newReview)))
+    .then((newReview) => {
+      dispatch(receiveReview(newReview));
+    })
 );
 
 export const updateReview = (businessId, review) => dispatch => (
   patchReview(businessId, review)
-    .then((updatedReview) => dispatch(receiveReview(updatedReview)))
+    .then((updatedReview) => {
+      dispatch(receiveReview(updatedReview));
+    })
 );
 
 export const destroyReview = (reviewId) => dispatch => (

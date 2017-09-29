@@ -65,7 +65,7 @@ export const receiveRecommendedBusinesses = (businesses) => ({
 
 export const clearSearch = () => ({
   type: CLEAR_SEARCH
-})
+});
 
 export const fetchBusinesses = () => dispatch => (
   getAllBusinesses()
@@ -91,7 +91,8 @@ export const updateBusiness = (business) => dispatch => (
 
 export const deleteBusiness = (businessId) => dispatch => (
   destroyBusiness(businessId)
-    .then(() => dispatch(removeBusiness(businessId)))
+    .then(() => dispatch(removeBusiness(businessId)),
+          (errors) => dispatch(receiveBusinessErrors(errors.responseJSON)))
 );
 
 export const searchBusinesses = (query) => dispatch => {

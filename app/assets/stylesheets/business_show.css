@@ -76,8 +76,12 @@
   height: 100%;
 }
 
+.biz-album-wrapper div{
+  box-shadow: 0 0 25px -3px rgba(0,0,0,0.5);
+}
+
 .biz-album-wrapper img {
-  object-fit: contain;
+  object-fit: cover;
   height: 250px;
   width: 400px;
 }

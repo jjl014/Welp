@@ -40,7 +40,7 @@ class Api::BusinessesController < ApplicationController
       business.destroy
       render json: business
     else
-      render json: ["Must be the owner to perform this operation: Delete"], status: 401
+      render json: ["You must be the owner of this business to delete it."], status: 401
     end
   end
 

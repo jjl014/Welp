@@ -147,6 +147,16 @@ export default class BusinessForm extends React.Component {
               });
   }
 
+  handleDelete() {
+    return (e) => {
+      e.preventDefault();
+      this.props.deleteBusiness(this.props.business.id)
+                .then(() => {
+                  this.props.history.push("/businesses");
+                });
+    };
+  }
+
   handleCloseErrors() {
     return (e) => {
       e.preventDefault();
@@ -184,12 +194,14 @@ export default class BusinessForm extends React.Component {
   render() {
     let button;
     let header;
+    let deleteButton;
     if (this.props.formType === 'new') {
       button = "Create Business";
       header = "Register Your Business";
     } else {
       button = "Submit Changes";
       header = "Upate Business Detail";
+      deleteButton = <button className="btn-primary biz-btn" onClick={this.handleDelete()}>Delete Business</button>;
     }
     return (
       <div className="biz-search-wrap">
@@ -224,8 +236,11 @@ export default class BusinessForm extends React.Component {
                 <option value="3">$$$ - Pricey</option>
                 <option value="4">$$$$ - Ultra High-End</option>
               </select>
-
-              <button className="btn-primary biz-btn" onClick={this.handleSubmit}>{button}</button>
+              <div className="biz-form-btns h-box">
+                <button className="btn-primary biz-btn" onClick={this.handleSubmit}>{button}</button>
+                {deleteButton}
+                <Link to={`/businesses/${this.props.match.params.businessId}`}>Cancel</Link>
+              </div>
             </div>
             <div className="biz-update-map">
               <Map place={this.state.place} type="form"/>

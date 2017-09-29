@@ -74,11 +74,23 @@ export default class ReviewForm extends React.Component {
     };
   }
 
+  handleDelete() {
+    return (e) => {
+      e.preventDefault();
+      this.props.destroyReview(this.props.match.params.reviewId)
+                .then(() => {
+                  this.props.history.push(`/businesses/${this.props.match.params.businessId}`);
+                });
+    };
+  }
+
   render() {
     const business = this.props.business;
     let header;
+    let deleteButton;
     if (this.props.formType === "edit") {
       header = "Update Your Review";
+      deleteButton = <button onClick={this.handleDelete()} className="btn-primary-small">Delete Review</button>;
     } else {
       header = "Write a Review";
     }
@@ -102,7 +114,7 @@ export default class ReviewForm extends React.Component {
             </div>
             <div className="review-biz-info h-box">
               <div className="biz-img">
-                <img src={`${business.img_preview}`}/>
+                <img src={`${business.img_preview ? business.img_preview : "https://res.cloudinary.com/jun/image/upload/v1506033108/business_90_square_i61t6u.png"}`}/>
               </div>
               <div className="review-biz-details v-box">
                 <div className="review-biz-name">
@@ -156,6 +168,7 @@ export default class ReviewForm extends React.Component {
               </div>
               <div className="review-button-container h-box">
                 <button onClick={this.handleSubmit()} className="btn-primary-small">Post Review</button>
+                {deleteButton}
                 <Link to={`/businesses/${business.id}`}>Cancel</Link>
               </div>
 

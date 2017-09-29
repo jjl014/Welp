@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import BusinessForm from './business_form';
-import {createBusiness, updateBusiness, fetchBusiness, clearBusinessErrors} from '../../actions/business_actions';
+import {createBusiness, updateBusiness, fetchBusiness, clearBusinessErrors, deleteBusiness} from '../../actions/business_actions';
 import {selectBusinessById} from '../../reducers/selectors';
 import {getGeoFromAddress} from '../../util/map_api_util';
 import {addInputCallBack} from '../../util/general_util';
@@ -33,7 +33,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   clearBusinessErrors: () => dispatch(clearBusinessErrors),
   fetchBusiness: (id) => dispatch(fetchBusiness(id)),
-  getGeoFromAddress: (address) => getGeoFromAddress(address)
+  getGeoFromAddress: (address) => getGeoFromAddress(address),
+  deleteBusiness: (id) => dispatch(deleteBusiness(id))
 });
 
 export default withRouter(connect(

@@ -113,8 +113,12 @@ li.review-index-item {
   align-items: center;
 }
 
+.review-button-container button {
+  margin-right: 10px;
+}
+
 .review-button-container a {
-  padding: 5px 0 5px 12px;
+  padding: 5px 0;
 }
 
 .review-button-container a:hover {
@@ -232,6 +236,11 @@ li.review-index-item {
   height: 180px;
 }
 
+.stars-lrg-0 {
+  height: 24px;
+  background-position: 0 0;
+}
+
 .stars-lrg-1 {
   height: 24px;
   background-position: 0 -24px;
@@ -283,6 +292,12 @@ li.review-index-item {
   left: 0;
   width: 102px;
   height: 180px;
+}
+
+.stars-med-0 {
+  width: 102px;
+  height: 18px;
+  background-position: 0px -240px;
 }
 
 .stars-med-1 {

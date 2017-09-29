@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import ReviewForm from './review_form';
 import {selectReviewById, selectBusinessById} from '../../reducers/selectors';
 import {fetchBusiness} from '../../actions/business_actions';
-import {createReview, updateReview,  fetchReviews, fetchReview} from '../../actions/review_actions';
+import {createReview, updateReview,  fetchReviews, fetchReview, destroyReview} from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let formType;
@@ -31,7 +31,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       }
     },
     fetchReview: (reviewId) => dispatch(fetchReview(reviewId)),
-    fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId))
+    fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
+    destroyReview: (reviewId) => dispatch(destroyReview(reviewId))
   };
 };
 

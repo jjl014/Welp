@@ -106,26 +106,29 @@ export default class BusinessShow extends React.Component {
       }
 
       const ar = business.avg_rating;
-
       let avgRating;
-      if (ar < 1.5) {
-        avgRating = <div className="stars-lrg stars-lrg-1"></div>;
-      } else if (ar < 2) {
-        avgRating = <div className="stars-lrg stars-lrg-1-5"></div>;
-      } else if (ar < 2.5) {
-        avgRating = <div className="stars-lrg stars-lrg-2"></div>;
-      } else if (ar < 3) {
-        avgRating = <div className="stars-lrg stars-lrg-2-5"></div>;
-      } else if (ar < 3.5) {
-        avgRating = <div className="stars-lrg stars-lrg-3"></div>;
-      } else if (ar < 4) {
-        avgRating = <div className="stars-lrg stars-lrg-3-5"></div>;
-      } else if (ar < 4.5) {
-        avgRating = <div className="stars-lrg stars-lrg-4"></div>;
-      } else if (ar < 5) {
-        avgRating = <div className="stars-lrg stars-lrg-4-5"></div>;
+      if (!ar) {
+        avgRating = <div className="stars-lrg stars-lrg-0"></div>;
       } else {
-        avgRating = <div className="stars-lrg stars-lrg-5"></div>;
+        if (ar < 1.5) {
+          avgRating = <div className="stars-lrg stars-lrg-1"></div>;
+        } else if (ar < 2) {
+          avgRating = <div className="stars-lrg stars-lrg-1-5"></div>;
+        } else if (ar < 2.5) {
+          avgRating = <div className="stars-lrg stars-lrg-2"></div>;
+        } else if (ar < 3) {
+          avgRating = <div className="stars-lrg stars-lrg-2-5"></div>;
+        } else if (ar < 3.5) {
+          avgRating = <div className="stars-lrg stars-lrg-3"></div>;
+        } else if (ar < 4) {
+          avgRating = <div className="stars-lrg stars-lrg-3-5"></div>;
+        } else if (ar < 4.5) {
+          avgRating = <div className="stars-lrg stars-lrg-4"></div>;
+        } else if (ar < 5) {
+          avgRating = <div className="stars-lrg stars-lrg-4-5"></div>;
+        } else {
+          avgRating = <div className="stars-lrg stars-lrg-5"></div>;
+        }
       }
 
       return (
