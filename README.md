@@ -2,7 +2,7 @@
 
 [Welp live][heroku]
 
-Welp is a Yelp inspired clone where users are able to signup and login to create businesses as well as leave reviews on existing ones. Welp utilizes React/Redux for the front end and Rails/Postgresql for the back end. Google Maps API and Google Static Maps API were used to get latitude and longitude information as well as address components based on user input. React-Slick was used to display the image album for the business show pages. 
+Welp is a Yelp inspired clone where users are able to signup and login to create businesses as well as leave reviews on existing ones. Welp is a single page application that utilizes React/Redux for the front end and Rails/Postgresql for the back end. Google Maps API and Google Static Maps API were used to get latitude and longitude information as well as address components based on user input. React-Slick was used to display the image album for the business show pages. 
 
 ## Features
 
@@ -22,7 +22,49 @@ Searching for a business returns results based on the business name. The map mar
 
 ![Business Create][business-create]
 
-When creating a business, the map will update and show a marker at the specified address location based on the user's input.
+When creating a business, the map will update and show a marker at the specified address location based on the user's input. Working with Google Places API came with some difficulties since the business creation form used the same map component as the business index. Adding a type property made the distinction between the two manageable and allowed for code reuse.
+
+```
+// map.jsx
+
+componentDidMount() {
+  const map = this.refs.map;
+  const mapOptions = {
+    // San Francisco
+    center: {lat: 37.7758, lng: -122.435 },
+    zoom: 14
+  };
+  if (this.props.type === 'search') {
+    mapOptions.zoom = 12;
+  }
+
+  this.map = new google.maps.Map(map, mapOptions);
+  this.MarkerManager = new MarkerManager(this.map);
+  if (this.props.businesses && Object.keys(this.props.businesses).length > 0 ) {
+    this.MarkerManager.updateMarkers(this.props.businesses);
+  }
+}
+
+componentWillReceiveProps(newProps) {
+  if (newProps.type === 'search' && newProps.businesses) {
+    this.MarkerManager.updateMarkers(newProps.businesses);
+  }
+}
+
+componentDidUpdate() {
+  if (this.props.type === "form" && this.props.place && (Object.keys(this.props.place).length !== 0)) {
+    const lat = this.props.place.geometry.location.lat;
+    const lng = this.props.place.geometry.location.lng;
+    const position = new google.maps.LatLng(lat, lng);
+    const marker = new google.maps.Marker({
+      position,
+      map: this.map,
+    });
+    this.map.setCenter(position);
+  }
+}
+
+```
 
 ### Editing a Business
 
@@ -34,7 +76,7 @@ Users are allowed to edit the business information, but only the owners of a bus
 
 ![Business Index][business-index]
 
-The business index shows a list of all the restuarants along with their map markers on the google maps.
+The business index shows a list of all the restuarants along with their map markers on the google maps. 
 
 ### Business Page
 
