@@ -6,6 +6,6 @@ class Business < ApplicationRecord
     foreign_key: :owner_id,
     class_name: :User
 
-  has_many :images
-  has_many :reviews
+  has_many :images, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 end
