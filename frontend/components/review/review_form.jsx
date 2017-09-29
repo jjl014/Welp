@@ -83,6 +83,21 @@ export default class ReviewForm extends React.Component {
       header = "Write a Review";
     }
     if (business) {
+      let businessPrice;
+      switch(business.price) {
+        case 1:
+          businessPrice = "$";
+          break;
+        case 2:
+          businessPrice = "$$";
+          break;
+        case 3:
+          businessPrice = "$$$";
+          break;
+        case 4:
+          businessPrice = "$$$$";
+          break;
+      }
       return (
         <div className="review-form-container h-box">
           <div className="review-form-wrapper v-box column-alpha border-layout-right">
@@ -91,14 +106,14 @@ export default class ReviewForm extends React.Component {
             </div>
             <div className="review-biz-info h-box">
               <div className="biz-img">
-                <img src="https://res.cloudinary.com/jun/image/upload/v1506033108/business_90_square_i61t6u.png"/>
+                <img src={`${business.img_preview}`}/>
               </div>
               <div className="review-biz-details v-box">
                 <div className="review-biz-name">
                   <Link to={`/businesses/${business.id}`}>{business.name}</Link>
                 </div>
                 <div className="price-category">
-                  {business.price}
+                  {businessPrice}
                 </div>
                 <div>
                   {business.address}

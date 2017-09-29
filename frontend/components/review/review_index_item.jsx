@@ -28,7 +28,7 @@ const ReviewIndexItem = ({review}) => {
   return (
     <li className="review-index-item h-box">
       <div className="user-info-wrapper h-box">
-        <img className="user-profile-pic" src="https://res.cloudinary.com/jun/image/upload/v1506464949/user_60_square_dsxggt.png" alt="User Logo"/>
+        <img className="user-profile-pic" src={`${review.user.img_url}`} alt="User Logo"/>
         <div className="user-info">
           <h4>{review.user.username}</h4>
           <p><b>{review.user.num_reviews}</b> {rev}</p>

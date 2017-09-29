@@ -1,0 +1,14 @@
+.footer-container {
+  background-color: #f5f5f5;
+  border-top: 1px solid #ccc;
+  justify-content: center;
+}
+
+.footer-img {
+  background: url("https://res.cloudinary.com/jun/image/upload/v1506662891/footer_cityscape_zbkslg.png") no-repeat bottom;
+  background-size: 660px 140px;
+  margin: 42px auto 18px;
+  height: 140px;
+  display: block;
+  width: 100%
+}

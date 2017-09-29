@@ -49,6 +49,7 @@ li.review-index-item {
 .user-profile-pic {
   margin-right: 9px;
   object-fit: cover;
+  border-radius: 4px;
   height: 60px;
   width: 60px;
 }
@@ -149,6 +150,7 @@ li.review-index-item {
   width: 60px;
   height: 60px;
   object-fit: cover;
+  border-radius: 4px;
 }
 
 .review-biz-info {
@@ -222,6 +224,58 @@ li.review-index-item {
     background-position: 0 344px;
 }
 
+.stars-lrg {
+  background: transparent url("https://res.cloudinary.com/jun/image/upload/v1506653249/welp_stars-light_ppoakw.png") no-repeat;
+  background-position: 0px -240px;
+  left: 0;
+  width: 200px;
+  height: 180px;
+}
+
+.stars-lrg-1 {
+  height: 24px;
+  background-position: 0 -24px;
+}
+
+.stars-lrg-1-5 {
+  height: 24px;
+  background-position: 0px -48px;
+}
+
+.stars-lrg-2 {
+  height: 24px;
+  background-position: 0px -72px;
+}
+
+.stars-lrg-2-5 {
+  height: 24px;
+  background-position: 0px -96px;
+}
+
+.stars-lrg-3 {
+  height: 24px;
+  background-position: 0px -120px;
+}
+
+.stars-lrg-3-5 {
+  height: 24px;
+  background-position: 0px -144px;
+}
+
+.stars-lrg-4 {
+  height: 24px;
+  background-position: 0px -168px;
+}
+
+.stars-lrg-4-5 {
+  height: 24px;
+  background-position: 0px -192px;
+}
+
+.stars-lrg-5 {
+  height: 24px;
+  background-position: 0px -216px;
+}
 
 .stars-med {
   background: transparent url("https://res.cloudinary.com/jun/image/upload/v1506653249/welp_stars-light_ppoakw.png") no-repeat;

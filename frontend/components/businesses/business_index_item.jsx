@@ -40,7 +40,6 @@ const BusinessIndexItem = ({business}) => {
     avgRating = <div className="stars-med stars-med-5"></div>;
   }
 
-
   return (
     <div className="biz-index-item-container">
       <div className="biz-index-item">
@@ -50,7 +49,12 @@ const BusinessIndexItem = ({business}) => {
               src={`${business.img_preview}`}/>
             <div className="biz-media-story">
               <div className="biz-name"><Link to={`/businesses/${business.id}`}>{business.name}</Link></div>
-              <div className="biz-rating">{avgRating}</div>
+              <div className="biz-rating-num h-box">
+                <div className="biz-rating">
+                  {avgRating}
+                </div>
+                <p>{business.num_reviews} reviews</p>
+              </div>
               <div className="biz-price-category">{businessPrice}</div>
             </div>
           </div>
@@ -61,11 +65,8 @@ const BusinessIndexItem = ({business}) => {
           </div>
         </div>
         <div className="biz-review-preview h-box">
-          <img className="user-profile-pic" src="https://res.cloudinary.com/jun/image/upload/v1506464949/user_60_square_dsxggt.png" alt="User Logo"/>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea...</p>
+          <img className="user-profile-pic" src={`${business.review_preview.user_img}`} alt="User Logo"/>
+          <p>{business.review_preview.review}</p>
         </div>
       </div>
     </div>

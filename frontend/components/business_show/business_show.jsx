@@ -90,7 +90,6 @@ export default class BusinessShow extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     const business = this.props.business;
     if (business) {
       let businessPrice;
@@ -108,6 +107,30 @@ export default class BusinessShow extends React.Component {
           businessPrice = "$$$$";
           break;
       }
+
+      const ar = business.avg_rating;
+
+      let avgRating;
+      if (ar < 1.5) {
+        avgRating = <div className="stars-lrg stars-lrg-1"></div>;
+      } else if (ar < 2) {
+        avgRating = <div className="stars-lrg stars-lrg-1-5"></div>;
+      } else if (ar < 2.5) {
+        avgRating = <div className="stars-lrg stars-lrg-2"></div>;
+      } else if (ar < 3) {
+        avgRating = <div className="stars-lrg stars-lrg-2-5"></div>;
+      } else if (ar < 3.5) {
+        avgRating = <div className="stars-lrg stars-lrg-3"></div>;
+      } else if (ar < 4) {
+        avgRating = <div className="stars-lrg stars-lrg-3-5"></div>;
+      } else if (ar < 4.5) {
+        avgRating = <div className="stars-lrg stars-lrg-4"></div>;
+      } else if (ar < 5) {
+        avgRating = <div className="stars-lrg stars-lrg-4-5"></div>;
+      } else {
+        avgRating = <div className="stars-lrg stars-lrg-5"></div>;
+      }
+
       return (
         <div className="biz-show-container max-w-1020 center">
           <div className="top-shelf"></div>
@@ -116,7 +139,7 @@ export default class BusinessShow extends React.Component {
               <div className="biz-header-left column-1-2">
                 <div className="biz-header-name"><h1>{business.name}</h1></div>
                 <div className="biz-header-rating">
-                  <img src="https://res.cloudinary.com/jun/image/upload/v1506362363/five_stars_wbd6ym.png"/>
+                  {avgRating}
                 </div>
                 <div className="biz-header-price-category"><h3>{businessPrice}</h3></div>
               </div>
@@ -130,7 +153,7 @@ export default class BusinessShow extends React.Component {
             <div className="biz-info-media h-box">
               <div className="biz-info v-box">
                 <div className="biz-map-cropped">
-                  <img src={`https://maps.googleapis.com/maps/api/staticmap?scale=2&center=${business.lat},${business.lng}&zoom=15&size=286x135&markers=color:red%7C%7C${business.lat},${business.lng}&key=AIzaSyATPzJ4_cbdsC14c4fJM1-Hwf5Fgta5L_A`}/>
+                  <img src={`https://maps.googleapis.com/maps/api/staticmap?scale=2&center=${business.lat},${business.lng}&zoom=15&size=286x135&markers=color:red%7C%7C${business.lat},${business.lng}&key=${window.google_apis.google_static_maps_api_key}`}/>
                 </div>
                 <div className="biz-full-info">
                   <div className="biz-full-address h-box">

@@ -8,7 +8,8 @@ export default class SessionForm extends React.Component {
     {
       username: "",
       password: "",
-      email: ""
+      email: "",
+      img_url: "https://res.cloudinary.com/jun/image/upload/v1506464949/user_60_square_dsxggt.png"
     } :
     {
       username: "",

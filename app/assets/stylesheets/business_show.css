@@ -23,6 +23,10 @@
   margin-bottom: 9px;
 }
 
+.biz-header-price-category h3 {
+  color: #666;
+}
+
 .biz-info-media {
   justify-content: space-between;
 }
@@ -51,7 +55,8 @@
 
 .biz-header-right {
   display: flex;
-  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 38px;
 }
 
 .biz-info-media {
@@ -64,13 +69,10 @@
 }
 
 .biz-album-super-container {
-  width: 60%;
+  width: 65%;
   justify-content: center;
 }
 
-/*.biz-album-wrapper .slick-slider {
-  height: 100%;
-}*/
 .biz-album {
   height: 100%;
 }
@@ -115,6 +117,20 @@
 .btn-review {
   width: 160px;
   height: 36px;
+  margin-right: 10px;
+}
+
+.btn-upload {
+  padding: 7px;
+  background: #f7f7f7;
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.btn-upload:hover {
+  background: white;
+  border: 1px solid #ccc;
 }
 
 .biz-icon {

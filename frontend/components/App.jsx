@@ -6,6 +6,7 @@ import SessionFormContainer from './sessions/session_form_container';
 import BusinessIndexContainer from './businesses/business_index_container';
 import BusinessSearch from './businesses/business_search';
 import FourZeroFour from './fourzerofour';
+import Footer from './footer';
 
 const App = () => {
   return (
@@ -17,10 +18,9 @@ const App = () => {
         <Route path="/businesses" component={BusinessSearch}/>
         <Route component={FourZeroFour}/>
       </Switch>
+      <Footer />
     </div>
   );
 };
 
 export default App;
-
-// <ProtectedRoute path="/reviews/:reviewId/edit" component={ReviewFormContainer}/>

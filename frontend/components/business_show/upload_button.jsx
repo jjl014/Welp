@@ -8,11 +8,10 @@ export default class UploadButton extends React.Component {
   }
 
   upload() {
-    const cloudinaryOptions = {cloud_name: 'jun', upload_preset: 'icdmqplr'};
     return (e) => {
       e.preventDefault();
       cloudinary.openUploadWidget(
-        cloudinaryOptions,
+        window.cloudinary_options,
         (error, images) => {
           if (error === null) {
             //upload successful
@@ -26,7 +25,7 @@ export default class UploadButton extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.upload()}>Add Photo</button>
+        <button className="btn-upload" onClick={this.upload()}><i className="fa fa-camera" aria-hidden="true"></i> Add Photo</button>
       </div>
     );
   }

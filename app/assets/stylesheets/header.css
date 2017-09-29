@@ -50,6 +50,7 @@
 
 .biz-header .search-find-wrapper {
   width: 500px;
+  height: 35px;
 }
 
 .biz-header .search-bar {
@@ -59,6 +60,7 @@
 
 .biz-header button.search-button {
   background: #bd1f1f;
+  padding: 11px 10px 11px;
 }
 
 .biz-header button.search-button:hover {

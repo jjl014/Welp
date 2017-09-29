@@ -47,8 +47,16 @@
 }
 
 .biz-name {
-  margin-bottom: 6px;
   font-size: 16px;
+}
+
+.biz-rating-num {
+  align-items: center;
+}
+
+.biz-rating-num p {
+  margin-left: 5px;
+  color: #666;
 }
 
 .biz-rating {
@@ -88,6 +96,6 @@
 .biz-review-preview p {
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 15px;
+  height: 20px;
   white-space: nowrap;
 }

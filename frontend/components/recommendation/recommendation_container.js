@@ -1,9 +1,10 @@
 import {connect} from 'react-redux';
 import Recommendation from './recommendation';
+import {asArray} from '../../reducers/selectors';
 
 const mapStateToProps = state => {
   return {
-    businesses: state.entities.businesses
+    businesses: asArray(state.entities)
   };
 };
 
