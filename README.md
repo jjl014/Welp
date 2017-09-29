@@ -95,7 +95,7 @@ On the review form, users can write their own unique review. Users can also see 
 * Search by food and location
 * Update business index when the map is moved
 * Allow users to bookmark restuarants
-* User profile page where users can view/edit their reviews
+* User profile page where users can view/edit their reviews as well as setting a profile picture
 
 [heroku]: https://welp-i-guess.herokuapp.com/
 [home]: https://github.com/jjl014/Welp/blob/master/app/assets/images/welp_home.png
