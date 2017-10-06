@@ -58,7 +58,7 @@ export default class Greeting extends React.Component {
             <SearchContainer />
             <ul className="homepage-categories h-box">
               <div className="category-restuarants h-box">
-                <i className="fa fa-cutlery" aria-hidden="true"></i><Link onClick={this.handleClick()} to="/businesses"><h3>Restuarants</h3></Link>
+                <i className="fa fa-cutlery" aria-hidden="true"></i><Link onClick={this.handleClick()} to="/businesses"><h3>Restaurants</h3></Link>
               </div>
             </ul>
           </div>
